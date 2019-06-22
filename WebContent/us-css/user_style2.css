@@ -1,0 +1,398 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.basic-grey {
+margin-left:auto;
+margin-right:auto;
+max-width: 500px;
+background: #F7F7F7;
+padding: 25px 15px 25px 10px;
+font: 12px Georgia, "Times New Roman", Times, serif;
+color: #888;
+text-shadow: 1px 1px 1px #FFF;
+border:1px solid #E4E4E4;
+}
+.basic-grey h1 {
+font-size: 25px;
+padding: 0px 0px 10px 40px;
+display: block;
+border-bottom:1px solid #E4E4E4;
+margin: -10px -15px 30px -10px;;
+color: #888;
+}
+.basic-grey h1>span {
+display: block;
+font-size: 11px;
+}
+.basic-grey label {
+display: block;
+margin: 0px;
+}
+.basic-grey label>span {
+float: left;
+width: 20%;
+text-align: right;
+padding-right: 10px;
+margin-top: 10px;
+color: #888;
+}
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+border: 1px solid #DADADA;
+color: #888;
+height: 30px;
+margin-bottom: 16px;
+margin-right: 6px;
+margin-top: 2px;
+outline: 0 none;
+padding: 3px 3px 3px 5px;
+width: 70%;
+font-size: 12px;
+line-height:15px;
+box-shadow: inset 0px 1px 4px #ECECEC;
+-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.basic-grey textarea{
+padding: 5px 3px 3px 5px;
+}
+.basic-grey select {
+background: #FFF url('down-arrow.png') no-repeat right;
+background: #FFF url('down-arrow.png') no-repeat right);
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance: none;
+text-indent: 0.01px;
+text-overflow: '';
+width: 70%;
+height: 35px;
+line-height: 25px;
+}
+.basic-grey textarea{
+height:100px;
+}
+.basic-grey .button {
+background: #E27575;
+border: none;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+box-shadow: 1px 1px 5px #B6B6B6;
+border-radius: 3px;
+text-shadow: 1px 1px 1px #9E3F3F;
+cursor: pointer;
+}
+.basic-grey .button:hover {
+background: #CF7A7A
+}
+
+body {
+	width: 100%;
+	height: auto;
+	background-color: background:#aac4bc;
+	background: -moz-linear-gradient(-45deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	background: -webkit-linear-gradient(-45deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	background: linear-gradient(135deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5', GradientType=1)
+}
+
+.uesr_header {
+	min-width: 900px;
+	width: 100%;
+	height: 70px;
+	background-color: dimgray;
+	position: absolute;
+	top: 0px;
+	z-index: 100;
+}
+
+/**妞ょ數婀佸锕�宕愰柈锟�*/
+
+.user_header_left {
+	width: 250px;
+	height: 50px;
+	margin: 10px 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+
+.user_header_left a {
+	text-decoration: none;
+	color: #dedede;
+}
+
+.user_header_left a:hover {
+	color: #EEEEEE;
+}
+
+
+/**娑擃參妫�*/
+
+.user_header_mid {
+	width: 500px;
+	height: 50px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	top: -50px;
+	left: 360px;
+}
+
+.user_header_mid .user_nav li {
+	width: 92px;
+	height: 70px;
+	list-style: none;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: -10px;
+	float: left;
+}
+
+.user_header_mid .user_nav li:hover {
+	background-color: gray;
+}
+
+
+/**妞ょ數婀侀崣鍐插磹闁拷*/
+
+.user_header_right {
+	width: 340px;
+	height: 70px;
+	float: right;
+	margin-right: 200px;
+}
+
+
+/**閹兼粎鍌ㄥ锟�*/
+
+.user_header_right .user_research {
+	width: 220px;
+	height: 40px;
+	margin: 15px 20px;
+	border-radius: 50px 50px;
+	background-color: white;
+}
+
+.user_header_right .user_research input {
+	width: 150px;
+	height: 36px;
+	margin-left: 19px;
+	outline: none;
+	border: 0px;
+}
+
+.user_header_right .user_research button {
+	background-color: white;
+	width: 35px;
+	height: 35px;
+	outline: none;
+	border: 0px;
+	margin-top: 2px;
+}
+
+.user_header_right .user_research button:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+
+/**閻€劍鍩涢惂璇茬秿/濞夈劌鍞�**/
+
+.user_header_right .user_name {
+	width: 70px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: -70px;
+	right: -70px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 14px;
+	border-radius: 50px;
+}
+
+.user_header_right .user_name:hover {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+
+/**婢舵潙鍎氭稉瀣濡楋拷**/
+
+#user_underlist {
+	width: 100px;
+	height: 120px;
+	position: relative;
+	z-index: 200;
+	top: -130px;
+	right: 230px;
+	float: right;
+	background-color: #dedede;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 2px 8px 0;
+	display: none;
+}
+
+#user_underlist li {
+	list-style: none;
+	margin: 15px 15px;
+	font-size: 13px;
+	font-family: "瀵邦喛钂嬮梿鍛寸拨";
+}
+#user_underlist li a{
+	color: black;
+	text-decoration: none;
+}
+
+#user_underlist li a:hover {
+	color: white;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.user_body{
+	float: right;
+	color: #EEEEEE;
+	font-size: 14px;
+	font-family: arial;
+}
+.user_body span:hover{
+	color: #CB5412;
+	cursor: pointer;
+}
+
+/**閻㈠灚顫�佃壈鍩�**/
+
+.lift-nav {
+	position: fixed;
+	top: 100px;
+	left: 30px;
+	display: none;
+}
+
+.lift-nav li {
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	background: cadetblue;
+	cursor: pointer;
+	list-style: none;
+}
+
+.lift-nav li.current {
+	background: tomato;
+}
+
+.t1,
+.t2,
+.t3,
+.t4 {
+	width: 800px;
+	height: 400px;
+	margin: 70px auto;
+	font-size: 20px;
+	color: #fff;
+}
+
+.t1 {
+	background-image: url(../img/t1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 200px;
+}
+
+
+
+
+/**t1閸愬懎顔�**/
+.t1_title {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+	background-color: darkgrey;
+	text-align: center;
+}
+
+
+
+/*娑擃亙姹夌挧鍕灐**/
+
+.user_data {
+	width: 600px;
+	height: 350px;
+	margin: 0 auto;
+}
+.user_data .user_data_photo {
+	width: 100px;
+	height: 120px;
+	background-color: white;
+	position: relative;
+	right: -50px;
+	top: 32px;
+}
+#userde{
+	width: 350px;
+	height: 250px;
+	position: relative;
+	left: 225px;
+	top: -90px;
+}
+
+.t1 .more {
+	float: right;
+	position: relative;
+	top: 320px;
+	right: 20px;
+	font-size: 12px;
+}
+.t1 .more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/**妞や絻鍓�**/
+.pick{
+	width: 80%;
+	border: 1px antiquewhite solid;
+	margin: 0 auto;
+}
+.user_footer{
+	width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+}
+.user_footer1{
+	width: 180px;
+	height: 200px;
+	float: left;
+	margin: 10px 56px;
+	font-size: 14px;
+	color: white;
+	font-family: "瀵邦喛钂嬮梿鍛寸拨";
+	text-align: center;
+	line-height: 25px;
+}
+.user_footer1 p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.user_footer1 img{
+	margin-top: 20px;
+}
+
+
+
+.bg{
+	background-color: red;
+}
+
+

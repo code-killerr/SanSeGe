@@ -1,0 +1,450 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width:900px
+	width: 100%;
+	height: auto;
+	background-color: background:#aac4bc;
+	background: -moz-linear-gradient(-45deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	background: -webkit-linear-gradient(-45deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	background: linear-gradient(135deg, #aac4bc 0%, #eca8a8 100%, #eed5a9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5', GradientType=1)
+}
+
+.uesr_header {
+	min-width: 900px;
+	width: 100%;
+	height: 70px;
+	background-color: dimgray;
+	position: absolute;
+	top: 0px;
+	z-index: 100;
+}
+
+/**妞ょ數婀佸锕�宕愰柈锟�*/
+
+.user_header_left {
+	width: 250px;
+	height: 50px;
+	margin: 10px 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+
+.user_header_left a {
+	text-decoration: none;
+	color: #dedede;
+}
+
+.user_header_left a:hover {
+	color: #EEEEEE;
+}
+
+
+/**娑擃參妫�*/
+
+.user_header_mid {
+	width: 500px;
+	height: 50px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	top: -50px;
+	left: 360px;
+}
+
+.user_header_mid .user_nav li {
+	width: 92px;
+	height: 70px;
+	list-style: none;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: -10px;
+	float: left;
+}
+
+.user_header_mid .user_nav li:hover {
+	background-color: gray;
+}
+
+
+/**妞ょ數婀侀崣鍐插磹闁拷*/
+
+.user_header_right {
+	width: 340px;
+	height: 70px;
+	float: right;
+	margin-right: 200px;
+}
+
+
+/**閹兼粎鍌ㄥ锟�*/
+
+.user_header_right .user_research {
+	width: 220px;
+	height: 40px;
+	margin: 15px 20px;
+	border-radius: 50px 50px;
+	background-color: white;
+}
+
+.user_header_right .user_research input {
+	width: 150px;
+	height: 36px;
+	margin-left: 19px;
+	outline: none;
+	border: 0px;
+}
+
+.user_header_right .user_research button {
+	background-color: white;
+	width: 35px;
+	height: 35px;
+	outline: none;
+	border: 0px;
+	margin-top: 2px;
+}
+
+.user_header_right .user_research button:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+
+/**閻€劍鍩涢惂璇茬秿/濞夈劌鍞�**/
+
+.user_header_right .user_name {
+	width: 70px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: -70px;
+	right: -70px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 14px;
+	border-radius: 50px;
+	color: white;
+}
+
+.user_header_right .user_name:hover {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+
+/**婢舵潙鍎氭稉瀣濡楋拷**/
+
+#user_underlist {
+	width: 100px;
+	height: 120px;
+	position: relative;
+	z-index: 200;
+	top: -130px;
+	right: 230px;
+	float: right;
+	background-color: #dedede;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 2px 8px 0;
+	display: none;
+}
+
+#user_underlist li {
+	list-style: none;
+	margin: 15px 15px;
+	font-size: 13px;
+	font-family: "瀵邦喛钂嬮梿鍛寸拨";
+}
+#user_underlist li a{
+	color: black;
+	text-decoration: none;
+}
+#user_underlist li a:hover {
+	color: white;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.user_body{
+	float: right;
+	color: #EEEEEE;
+	font-size: 14px;
+	font-family: arial;
+}
+.user_body span:hover{
+	color: #CB5412;
+	cursor: pointer;
+}
+
+/**閻㈠灚顫�佃壈鍩�**/
+
+.lift-nav {
+	position: fixed;
+	top: 100px;
+	left: 30px;
+	display: none;
+}
+
+.lift-nav li {
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	background: cadetblue;
+	cursor: pointer;
+	list-style: none;
+}
+
+.lift-nav li.current {
+	background: tomato;
+}
+
+.t1,
+.t2,
+.t3,
+.t4 {
+	width: 800px;
+	height: 400px;
+	margin: 100px auto;
+	font-size: 20px;
+	color: #fff;
+}
+
+.t1 {
+	height: 0px;
+	margin-top: 200px;
+}
+
+.t2 {
+	background-image: url(../us-img/t2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.t3 {
+	background-image: url(../us-img/t3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.t4 {
+	background-image: url(../us-img/t4.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/**t1閸愬懎顔�**/
+.t1_title {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+	background-color: darkgrey;
+	text-align: center;
+}
+.t2_title {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+	background-color: darkgrey;
+	text-align: center;
+}
+.t3_title {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+	background-color: darkgrey;
+	text-align: center;
+}
+.t4_title {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 0 0 10px 10px;
+	background-color: darkgrey;
+	text-align: center;
+}
+
+
+/*娑擃亙姹夌挧鍕灐**/
+
+.user_data {
+	width: 600px;
+	height: 350px;
+	margin: 0 auto;
+}
+.user_data .user_data_photo {
+	width: 100px;
+	height: 120px;
+	background-color: white;
+	position: relative;
+	right: -50px;
+	top: 32px;
+}
+.user_data p {
+	padding: 10px 10px;
+	font-size: 14px;
+	margin-left: 220px;
+	position: relative;
+	top: -95px;
+}
+.t1 .more {
+	float: right;
+	position: relative;
+	top: 320px;
+	right: 20px;
+	font-size: 12px;
+}
+.t1 .more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/**闂婂厖绠伴弨鎯版**/
+.user_musicloving {
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+}
+.user_musicloving div {
+	width: 100px;
+	height: 100px;
+	margin-top: 60px;
+	margin-left: 80px;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	font-family: arial;
+}
+.user_musicloving div:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+	transition: all 1s;
+	box-shadow: 0 2px 12px 0;
+}
+.t2 .more {
+	float: right;
+	position: relative;
+	top: 320px;
+	right: 20px;
+	font-size: 12px;
+}
+.t2 .more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/*閻㈤潧濂栭弨鎯版**/
+.user_movieloving {
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: center;
+	font-family: arial;
+}
+.user_movieloving div {
+	width: 100px;
+	height: 100px;
+	margin-top: 60px;
+	margin-left: 80px;
+	float: left;
+}
+.user_movieloving div:hover {
+	cursor: pointer;
+	transform: scale(1.5);
+	transition: all 1s;
+	box-shadow: 0 2px 12px 0;
+}
+.t3 .more {
+	float: right;
+	position: relative;
+	top: 320px;
+	right: 20px;
+	font-size: 12px;
+}
+.t3 .more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/**娑旓妇鐫勯弨鎯版**/
+.user_booksloving {
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: center;
+	font-family: arial;
+}
+.user_booksloving div {
+	width: 100px;
+	height: 100px;
+	margin-top: 60px;
+	margin-left: 80px;
+	float: left;
+}
+.user_booksloving div:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+	transition: all 1s;
+	box-shadow: 0 2px 12px 0;
+}
+.t4 .more {
+	float: right;
+	position: relative;
+	top: 320px;
+	right: 20px;
+	font-size: 12px;
+}
+.t4 .more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/**妞や絻鍓�**/
+.pick{
+	width: 80%;
+	border: 1px antiquewhite solid;
+	margin: 0 auto;
+}
+.user_footer{
+	width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+}
+.user_footer1{
+	width: 180px;
+	height: 200px;
+	float: left;
+	margin: 10px 56px;
+	font-size: 14px;
+	color: white;
+	font-family: "瀵邦喛钂嬮梿鍛寸拨";
+	text-align: center;
+	line-height: 25px;
+}
+.user_footer1 p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.user_footer1 img{
+	margin-top: 20px;
+}
+
+
+
+.bg{
+	background-color: red;
+}
+
+

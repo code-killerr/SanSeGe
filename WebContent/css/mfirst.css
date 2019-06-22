@@ -1,0 +1,417 @@
+*{
+	padding:0;
+	margin:0;
+	border: 0;
+}
+/*主体部分*/
+.mainbody{
+	width: 100%;
+	height:auto;
+}
+.bg1{
+	background-color: #00AEFF;
+}.bg2{
+	background-color: red;
+}
+/*导航栏*/
+.uesr_header{
+	width: 100%;
+	height: 70px;
+	background-color: dimgray;
+}
+/**页眉左半部*/
+.user_header_left{
+	width: 250px;
+	height: 50px;
+	margin: 10px 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+.user_header_left a{
+	text-decoration: none;
+	color: #dedede;
+}
+.user_header_left a:hover{
+	color: #EEEEEE;
+}
+/**中间*/
+.user_header_mid{
+	width: 500px;
+	height: 50px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	top: -50px;
+	left: 360px;
+}
+.user_header_mid .user_nav li{
+	width: 92px;
+	height: 70px;
+	list-style: none;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: -10px;
+	float: left;
+}
+.user_header_mid .user_nav li:hover{
+	background-color: gray;
+}
+/**页眉右半部*/
+.user_header_right{
+	width: 500px;
+	height: 70px;
+	float: right;
+	margin-right: 200px;
+}
+/**搜索框*/
+.user_header_right .user_research{
+	width: 220px;
+	height: 40px;
+	margin: 15px 20px;
+	border-radius: 50px 50px;
+	background-color: white;
+}
+.user_header_right .user_research input{
+	width: 150px;
+	height: 40px;
+	margin-left: 17px;
+	outline: none;
+}
+.user_header_right .user_research button{
+	background-color: white;
+	width: 35px;
+	height: 35px;
+}
+.user_header_right .user_research button:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+/**用户登录/注册**/
+.user_header_right .user_name{
+	width: 100px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: -70px;
+	right: 10px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+}
+.user_header_right .user_name a{
+	color: #EEEEEE;
+}
+.user_header_right .user_name a:hover{
+	color: #EEEEEE;
+	color: #FFFFFF;
+}
+/*主题字体样式*/
+.Ymsize{
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: #444444;
+	text-shadow: 1px 1px 0 #444444;
+}
+/*常规字体样式*/
+.Ysize{
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color:#222222;
+	text-shadow:0 0 0;
+}
+/*导航栏部分*/
+.Ynav{
+	width: 100%;
+	height: 110px;
+	background-color:#c7edd6;
+}
+.Ycarrier{
+	width: 1500px;
+	height:110px;
+	margin:0 auto;
+}
+/*片库*/
+.Ymodul{
+	width:317px;
+	height:102px;
+	float: left;
+}
+.Ymodul h4{
+	margin-top:10px;
+}
+.Ymodul a{
+	margin-left: 10px;
+	text-decoration: none;
+}
+.Ymodul a:hover{
+	color:#14901c;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px #de1c56;
+}
+/*导航栏中列表样式*/
+.Yblocks{
+	margin-top: 10px;
+}
+.Yblocks a{
+	margin-left:0px;
+	margin-right: 25px;
+}
+.Ydis{
+	margin-top: 10px;
+}
+/*地区*/
+.Yarea{
+	margin-left: 30px;
+}
+.Yarea  .Yblocks a{
+	margin-right: 40px ;
+}
+/*分类*/
+.Yclassify{
+	margin-left: 30px;
+}
+.Yclassify .Yblocks a{
+	margin-right:35px;
+}
+/*会员开通*/
+.Yvip{
+	width:275px;
+	height:130px;
+	float: left;
+	margin-left: 80px;
+}
+/*影视推荐*/
+.Ymore{
+	width: 1500px;
+	height: 400px;
+	margin:0 auto;
+	margin-top:40px;
+}
+.Yrnav{
+	width: 100%;
+	height: 30px;
+}
+.Yrnavleft{
+	width: 178px;
+	height: 28px;
+	float: left;
+}
+.Yrnavleft a{
+	text-decoration: none;
+}
+/*热播*/
+.Yhot{
+	width: 62px;
+	height: 25px;
+	border-radius: 50px 50px 50px 50px;
+	background-color: #2aac33;
+	float: left;
+	margin-left: 15px;
+	text-align: center;
+	line-height: 25px;
+	color: #f9f9f9;
+}
+.Yrnav a {
+	color: #222222;
+}
+/*特殊字体*/
+.spesize{
+	font-size: 29px;
+	color:#222222;
+}
+/*排版样式*/
+.Ystylesheet{
+	width: 100%;
+	height:370px;
+}
+/*视屏播放*/
+.Yvideos{
+	width: 640px;
+	height:360px;
+	float: left;
+}
+.Yintro{
+	width: 640px;
+	height: 40px;
+	float: left;
+	z-index: 999;
+	position: absolute;
+	line-height: 40px;
+	font-size:35px;
+	color:red;
+}
+.Yothers{
+	width:840px;
+	height:370px;
+	float: left;
+	margin-left:20px;
+}
+/*视频播放后面的内容*/
+.Ylist{
+	list-style:none;
+}
+.Ylist li{
+	float: left;
+	margin-right: 20px;
+}
+.Yexam{
+	width:230px;
+	height:370px;
+}
+.Ypicture{
+	width: 230px;
+	height:300px;
+}
+.Ypicture a:hover img{
+	transform: scale(1.1,1.1);
+	transition: 1.8s;
+}
+.Yminintro{
+	width: 230px;
+	height: 63px;
+	margin-top:5px;
+	background-color: #c7edd6;
+}
+.Yminintro a{
+	text-decoration: none;
+	color: #222222;
+	margin-left: 8px;
+	font-size: 20px;
+}
+.Yminintro a:hover{
+	color: #269ABC;
+}
+/*评分控制*/
+#Ymark{
+	float: right;
+	color: #ff6200;
+	font-size: 20px;
+}
+#Ydislike{
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+#Ylike{
+	float: right;
+	margin-right: 15px;
+}
+.Ysyn{
+	margin-top: 10px;
+	margin-left:8px;
+	color: #999999;
+}
+#Ydislike2{
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+#Ylike2{
+	float: right;
+	margin-right: 15px;
+}
+#Ydislike3{
+	float: right;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+#Ylike3{
+	float: right;
+	margin-right: 15px;
+}
+/*经典电影推荐*/
+.Yclassic{
+	width: 1500px;
+	height: 400px;
+	margin:0 auto;
+	margin-top: 50px;
+}
+.Yrnav2{
+	width: 100%;
+	height: 30px;
+}
+.Yrnav2 a {
+	color: #222222;
+}
+.Yrnavright{
+	width: 250px;
+	height: 28px;
+	float: right;
+}
+.Yrnavright a{
+	text-decoration: none;
+}
+.Yhot2{
+	width: 80px;
+	height: 25px;
+	border-radius: 50px 50px 50px 50px;
+	background-color: #2aac33;
+	float:right;
+	margin-left: 15px;
+	text-align: center;
+	line-height: 25px;
+	color: #f9f9f9;
+}
+.Yvideos2{
+	width: 640px;
+	height:360px;
+	float: right;
+}
+/*经典简介*/
+.Yci{
+	width: 800px;
+	height:370px;
+	float: right;
+	margin-right: 50px;
+}
+.Yclist{
+	text-decoration: none;
+}
+.Yclist li{
+	margin-left: 40px;
+	margin-top:30px;
+}
+.Yclist li h2 a{
+	text-decoration: none;
+	color: #222222;
+}
+.Ycisize{
+	font-size: 17px;
+	font-family: "微软雅黑";
+	color:#080808;
+	text-shadow: 1px 1px 1px #000000;
+}
+/*页脚*/
+.pick{
+	width: 80%;
+	border: 1px antiquewhite solid;
+	margin: 0 auto;
+	background-color:#696969;
+}
+.user_footer{
+	width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+}
+.user_footer1{
+	width: 180px;
+	height: 200px;
+	float: left;
+	margin: 10px 56px;
+	font-size: 14px;
+	color:#222222;
+	font-family: "微软雅黑";
+	text-align: center;
+	line-height: 25px;
+}
+.user_footer1 p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.user_footer1 img{
+	margin-top: 20px;
+}

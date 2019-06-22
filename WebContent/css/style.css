@@ -1,0 +1,196 @@
+@charset "utf-8"; /* CSS Document */
+a,a:active,a:focus {
+	outline-color: -moz-use-text-color;
+	outline-style: none;
+	outline-width: 0;
+}
+/*城市的忙碌犹如这线条的繁复
+烦乱的心情同样也要精心呵护*/
+
+a:active,a:focus {
+	outline: expression(hideFocus='true');
+}
+
+p {
+	margin-bottom: 20px;
+}
+.titleword{
+	position: absolute;
+	z-index: 99;
+	text-align: center;
+	width: 100%;
+	top: 30%;
+}
+.titleword span{
+	font-size: 60px;
+	color: #e7f5fa;
+}
+.titleword p{
+	font-size: 30px;
+	background: linear-gradient(to right, blue, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: futura;
+}
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+#tabs4{
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+#tabs4 li {
+	width: 33.3333%;
+	float: left;
+	text-align: center;
+}
+#tabs4 ul li{
+	position: sticky;
+}
+#tabs4 li a {
+	display: block;
+	padding: 17px 30px;
+	text-decoration: none;
+	color: #8478B3;
+}
+#tabs4 .a11{
+	background: linear-gradient(to right, #9ebde3, #a0d29c);
+}
+#tabs4 .a22{
+	background: linear-gradient(to right, #a0d29c, #ddd);
+}
+#tabs4 .a33{
+	background: linear-gradient(to right, #ddd, #9ebde3);
+}
+#tabs4 .a11:hover{
+	background: linear-gradient(to right, #a0d29c, #ddd);
+}
+#tabs4 .a22:hover{
+	background: linear-gradient(to right, #ddd, #9ebde3);
+}
+#tabs4 .a33:hover{
+	background: linear-gradient(to right, #9ebde3, #c7edd6);
+}
+#tabs-1{
+	width: 100%;
+	min-width: 900px;
+	height: 900px;
+	background-color:#a0d29c;
+	color: #383a3c;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 1.25;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+}
+#tabs-2{
+	width: 100%;
+	min-width: 900px;
+	height: 900px;
+	background-color:#ddd;
+}
+#tabs-3{
+	height: 900px;
+	width: 100%;
+	min-width: 900px;
+	background-color:#9ebde3;
+}
+#tabs_container {
+	padding-bottom:40px ;
+	overflow: hidden;
+	background: white;
+}
+
+
+.transition {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+}
+
+.make_transist {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.hideflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+
+	-webkit-transform: rotatey(-90deg) scale(1.1);
+	-moz-transform: rotatey(-90deg) scale(1.1);
+	-o-transform: rotatey(-90deg) scale(1.1);
+	-ms-transform: rotatey(-90deg) scale(1.1);
+	transform: rotatey(-90deg) scale(1.1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.showflip {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+
+	-webkit-transition-delay: .3s;
+	-moz-transition-delay: .3s;
+	-o-transition-delay: .3s;
+	-ms-transition-delay: .3s;
+	transition-delay: .3s;
+
+	-webkit-transform: rotatey(0deg) scale(1);
+	-moz-transform: rotatey(0deg) scale(1);
+	-o-transform: rotatey(0deg) scale(1);
+	-ms-transform: rotatey(0deg) scale(1);
+	transform: rotatey(0deg) scale(1);
+
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.tabulous_active {
+	background:  #a0d29c !important;
+	color: #655c89 !important;
+}
+.tabulous_active1{
+	background:  #ddd !important;
+	color: #655c89 !important;
+}
+.tabulous_active2{
+	background:  #9ebde3 !important;
+	color: #655c89 !important;
+}
+.tabulousclear {
+	display: block;
+	clear: both;
+}
+
+
+
+/*小说背景*/
+#site-landing {
+	width: 100%;
+	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	overflow: hidden;
+	}

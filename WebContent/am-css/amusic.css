@@ -1,0 +1,393 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+/*缁欒儗鏅姞棰滆壊  鏆傛椂鏃犵敤*/
+/*.page{
+	position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -99;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: #DDDDDD;
+}*/
+body{
+	width: 100%;
+	height: auto;
+}
+.uesr_header{
+	min-width:900px;
+	width: 100%;
+	height: 70px;
+	background-color: dimgray;
+	position: relative;
+}
+/**椤电湁宸﹀崐閮�*/
+.user_header_left{
+	width: 250px;
+	height: 50px;
+	margin: 10px 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+.user_header_left a{
+	text-decoration: none;
+	color: #dedede;
+}
+.user_header_left a:hover{
+	color: #EEEEEE;
+}
+/**涓棿*/
+.user_header_mid{
+	width: 500px;
+	height: 50px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	top: -50px;
+	left: 340px;
+}
+.user_header_mid .user_nav li{
+	width: 92px;
+	height: 70px;
+	list-style: none;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: -10px;
+	float: left;
+}
+.user_header_mid .user_nav li:hover{
+	background-color: gray;
+}
+/**椤电湁鍙冲崐閮�*/
+.user_header_right{
+	width: 500px;
+	height: 70px;
+	float: right;
+	margin-right: 200px;
+}
+/**鎼滅储妗�*/
+.user_header_right .user_research{
+	width: 220px;
+	height: 40px;
+	margin: 15px 140px;
+	border-radius: 50px 50px;
+	background-color: white;
+}
+.user_header_right .user_research input{
+	width: 150px;
+	height: 40px;
+	margin-left: 17px;
+	outline: none;
+}
+.user_header_right .user_research button{
+	background-color: white;
+	width: 35px;
+	height: 35px;
+}
+.user_header_right .user_research button:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+/**鐢ㄦ埛鐧诲綍/娉ㄥ唽**/
+.user_header_right .user_name{
+	width: 100px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: -70px;
+	right: -55px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+}
+.user_header_right .user_name a{
+	color: #EEEEEE;
+}
+.user_header_right .user_name a:hover{
+	color: #EEEEEE;
+	color: #FFFFFF;
+}
+/*瀵艰埅鏍�*/
+.cut{
+	width: 100%;
+	height: 336px;
+	margin: 0 auto;
+	
+	background-color: #DDDDDD;
+}
+.butten{
+	width: 882px;
+	height: 336px;
+	margin: 0 auto;
+}
+/*涓棿鍐呭*/
+.box{
+	width: 882px;
+	height: 1505px;
+	margin: 0 auto;
+	padding-top: 20px;
+	border-top: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+/*鐑棬鎺ㄨ崘*/
+.recomed{
+	width: 842px;
+	height: 563px;
+	margin: 0 auto;
+}
+.hot{
+	width: 842px;
+	height: 35px;
+	border-bottom: 2px solid #CCCCCC;
+	margin: 0 auto;
+	font-size: 20px;
+	color: #333333;
+}
+.list{
+	width: 842px;
+	height: 468px;
+}
+.single{
+	width: 170px;
+    height: 204px;
+    float: left;
+    margin-left: 32px;
+    margin-top: 22px;
+}
+.list li{
+	list-style: none;
+}
+.img{
+	width: 170px;
+	height: 170px;
+}
+.img:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+#butt{
+	width: 50px;
+    height: 55px;
+    position: relative;
+    top: -110px;
+    left: 60px;
+/*    display: none;*/
+}
+#butt a{
+	text-decoration: none;
+	color: #DDDDDD;
+	opacity: 0;   /*閫忔槑搴�*/
+}
+.img:hover #butt a{          /*閫氳繃鏀瑰彉閫忔槑搴︿娇鎾斁閿嚭娌�*/
+	opacity: 0.8;
+}
+a:hover{
+	cursor: pointer;
+}
+.words{
+	width: 170px;
+	height: 20px;
+	margin-top: 8px;
+	font-size: 14px;
+	color: #333333;
+}
+/*鏂扮涓婃灦*/
+.new{
+	width: 842px;
+	height: 293px;
+	margin: 0 auto;
+}
+.disc{
+	width: 842px;
+	height: 206px;
+	margin-top: 20px;
+	background-color: #DDDDDD;
+}
+.disc li{
+	list-style: none;
+}
+.disc_list{
+	
+}
+.disc_single{
+	width: 130px;
+    height: 186px;
+    float: left;
+    margin-left: 32px;
+    margin-top: 22px;
+}
+.disc_img{
+	width: 130px;
+    height: 130px;
+}
+.disc_img:hover{
+	transform: scale(1.1);    /*鍔ㄧ敾*/
+	cursor: pointer;
+}
+.disc_img:hover #play a{          /*閫氳繃鏀瑰彉閫忔槑搴︿娇鎾斁閿嚭娌�*/
+	opacity: 0.8;
+}
+#play{
+	width: 40px;
+    height: 45px;
+    position: relative;
+    top: -84px;
+    left: 48px;
+}
+#play a{
+	text-decoration: none;
+	color: #DDDDDD;
+	opacity: 0;
+}
+.disc_words1{
+	width: 130px;
+	height: 18px;
+	font-size: 12px;
+	color: #000000;
+	line-height: 18px;
+	margin-top: 6px;
+}
+.disc_words2{
+	width: 130px;
+	height: 18px;
+	font-size: 12px;
+	color: #666666;
+	line-height: 18px;
+}
+/*姒滃崟*/
+.notice{
+	width: 842px;
+	height: 527px;
+	margin: 0 auto;
+}
+.notice_list{
+	width: 842px;
+	height: 473px;
+	margin-top: 20px;
+	background-color: #DDDDDD;
+	border: 1px solid #CCCCCC;
+}
+.notice_list_left{
+	width: 280px;
+	height: 473px;
+	float: left;
+	border: 1px solid #CCCCCC;
+}
+.notice_list_left_header{
+	width: 280px;
+	height: 130px;
+}
+.header_img{
+	width: 90px;
+	height: 90px;
+	position: relative;
+	top: 20px;
+	left: 30px;
+}
+.header_matter{
+	width: 126px;
+	height: 51px;
+	position: relative;
+	top: -70px;
+	left: 120px;
+	font-size: 14px;
+	color: #333333;
+	line-height: 30px;
+
+}
+.nomber_one{
+	color: #c10d0c;
+    float: left;
+	position: relative;
+    width: 40px;
+    height: 34px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    background-color: #CCCCCC;
+}
+.nomber_double{
+	color: #c10d0c;
+    float: left;
+	position: relative;
+    width: 40px;
+    height: 34px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+}
+ol li{
+	   list-style: none;
+	   margin-top: -10px;
+}
+.song_one{
+	float: left;
+    width: 238px;
+    height: 34px;
+    font-size: 12px;
+    line-height: 32px;
+	background-color: #CCCCCC;
+}
+.song_double{
+	float: left;
+    width: 238px;
+    height: 34px;
+    font-size: 12px;
+    line-height: 32px;
+}
+li a{
+	color: #666666;
+}
+/*鍏ㄩ儴闊充箰*/
+.all{
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	text-align: center;
+	position: relative;
+	top: 15px;
+	left: 761px;
+
+}
+.all a{
+	color: #333333;
+}
+/*椤佃剼*/
+.pick{
+	width: 100%;
+	border: 1px #CCCCCC solid;
+	margin: 0 auto;
+}
+.user_footer{
+	width: 100%;
+	height: 200px;
+	margin: 0 auto;
+	background-color: #DDDDDD;
+}
+.user_footer1{
+	width: 180px;
+	height: 200px;
+	float: left;
+	margin-left: 40px;
+	font-size: 14px;
+	color: white;
+	font-family: "寰蒋闆呴粦";
+	text-align: center;
+	line-height: 21px;
+}
+.user_footer1 p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.user_footer1 img{
+	margin-top: 20px;
+}
