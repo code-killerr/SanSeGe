@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="min-width:1300px">
 <head>
 <meta charset="utf-8">
 <meta http-equiv=imagetoolbar content=no>
@@ -139,7 +139,7 @@
 						</label>
 					</form>
 					<%} else{%>
-						<p> 请先登录</p>
+						<a href = sign.jsp> 请先登录</a>
 					<% } %>
 				</div>
 			</div>

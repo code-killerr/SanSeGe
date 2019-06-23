@@ -1,3 +1,6 @@
+<%@page import="com.sansege.enuity.UserEntity"%>
+<%@page import="com.sansege.enuity.BookEntity"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -6,43 +9,89 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" href="no-css/style_zxy_rank.css" />
+		<link rel="stylesheet" href="us-css/user_style.css" />
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
 		<script type="text/javascript" src="no-js/js_zxy_rank.js"></script>
+		<script type="text/javascript" src="us-js/user_style.js"></script>
 	</head>
 	<body>
-		<!--导航栏-->
-		<div class="uesr_header">
-			<div class="user_header_left">
-				<img src="no-img/logo.png"/>
-				<a href="#">三色格</a>
-				<div class="user_header_mid">
-					<ul class="user_nav">
-						<li>
-							<a href="#">首页</a>
-						</li>
-						<li>
-							<a href="#">音乐</a>
-						</li>
-						<li>
-							<a href="#">电影</a>
-						</li>
-						<li>
-							<a href="#">书籍</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="user_header_right">
-				<div class="user_research">
-					<input type="text" placeholder="搜索更多你想要的"/>
-					<button class="fa fa-search"></button>
-				</div>
-				<div class="user_name">
-					<a href="#">登录</a>
-					<a href="#">注册</a>
-				</div>
+	<!---导航栏--->
+	<div class="uesr_header">
+		<div class="user_body">
+			<p>选择今天的天气：</p>
+			<span class="fa fa-sun-o" id="weatherchoose1" onclick="getans1()" on="loseans1()"></span>
+			<span class="fa fa-cloud" id="weatherchoose2" onclick="getans2()"></span>
+			<span class="fa fa-snowflake-o" id="weatherchoose3" onclick="getans3()"></span>
+		</div>
+		<div class="user_header_left">
+			<img src="us-img/logo.png"/>
+			<a href="#">三色格</a>
+			<div class="user_header_mid">
+				<ul class="user_nav">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">音乐</a>
+					</li>
+					<li>
+						<a href="#">电影</a>
+					</li>
+					<li>
+						<a href="#">书籍</a>
+					</li>
+				</ul>
 			</div>
 		</div>
+		<div class="user_header_right">
+			<div class="user_research">
+				<input type="text" placeholder="搜索更多你想要的"/>
+				<button class="fa fa-search"></button>
+			</div>
+			<div class="user_name" onmouseover="show()" onmouseout="recover()">
+			<%
+			UserEntity userEntity = (UserEntity)session.getAttribute("userDate");
+			    if(userEntity != null){
+			%>
+				<span>
+		    			<%=userEntity.getUserName()%>
+				</span>
+				
+				
+		</div>
+		<%
+					}
+			    else{
+	 %>
+	 <a href="#">登录</a>
+	 <a href="#">注册</a>
+	 <%
+			}
+	 %>
+	</div>
+	
+	</div>
+	<!---头像下拉列表--->
+	<div id="user_underlist" onmouseover="show()" onmouseout="recover()" >
+		<ul>
+			<li>
+				<a href="us-index.jsp">个人中心
+					<span class="fa fa-envelope"></span>
+				</a>
+			</li>
+			<li>
+				<a href="user_de.jsp">个人资料
+					<span class="fa fa-user"></span>
+				</a>
+			</li>
+			<li>
+				<a href="DeadUser">退出登录
+					<span class="fa fa-sign-out"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
 		<!--整体的页面-->
 		<div class="zxy_page">
 			<!--阅读导航栏-->
@@ -96,66 +145,27 @@
 					<div class="back">
 					    <div>
 					    	<table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">另类女医生</th>
-					    			<th width="80px">刀豆</th>
-					    			<th width="5px">9.6</th>
+					    	<%
+					    		ArrayList<BookEntity> list = (ArrayList<BookEntity>)session.getAttribute("book");
+					    		
+					    	%>
+					    	<%
+					    		int n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">贤媛</th>
-					    			<th width="80px">易难</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">女人往事</th>
-					    			<th width="80px">瑜瑾</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">女神蒙上眼</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">桐花落尽</th>
-					    			<th width="80px">第九杯茶</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">雨打梧桐风萧萧</th>
-					    			<th width="80px">海燕麦萌</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">处刑人</th>
-					    			<th width="80px">艾石</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">锦素年华蕴余生</th>
-					    			<th width="80px">艾丽萨</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">树欲静</th>
-					    			<th width="80px">叶眉</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">后丧尸时代的田野调查</th>
-					    			<th width="80px">月亮粥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 					    </div>
@@ -168,66 +178,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -240,66 +207,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -312,66 +236,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -384,66 +265,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -456,66 +294,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -533,66 +328,23 @@
 					<div class="back">
 					    <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 					    </div>
@@ -605,66 +357,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -677,66 +386,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -749,66 +415,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -826,66 +449,23 @@
 					<div class="back">
 					    <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 					    </div>
@@ -898,66 +478,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -970,66 +507,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1042,66 +536,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1114,66 +565,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1186,66 +594,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1263,66 +628,23 @@
 					<div class="back">
 					    <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 					    </div>
@@ -1335,66 +657,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1407,66 +686,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1479,66 +715,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1556,66 +749,23 @@
 					<div class="back">
 					    <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 					    </div>
@@ -1628,66 +778,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1700,66 +807,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1772,66 +836,23 @@
 				    <div class="back">
 				        <div>
 					        <table width="250px" height="300px">
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">1.</th>
-					    			<th width="171px">六姊妹</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
+					    		<%
+					    		n=1;
+					    		if(list!=null)
+					    		{
+					    			for(BookEntity i: list){
+					    	%>
+					    		<tr>
+					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">2.</th>
-					    			<th width="171px">小敏家</th>
-					    			<th width="80px">伊北</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">3.</th>
-					    			<th width="171px">少年，我爱你</th>
-					    			<th width="80px">南黑</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">4.</th>
-					    			<th width="171px">命运回路 长篇版</th>
-					    			<th width="80px">申子辰</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">5.</th>
-					    			<th width="171px">南华曲</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">6.</th>
-					    			<th width="171px">罗宋探案：天使</th>
-					    			<th width="80px">空城</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">7.</th>
-					    			<th width="171px">我和我的佛系老公</th>
-					    			<th width="80px">金牙太太</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">8.</th>
-					    			<th width="171px">希希：咨询之路</th>
-					    			<th width="80px">刘玥</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">9.</th>
-					    			<th width="171px">万物为谁春</th>
-					    			<th width="80px">王美雪</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
-					    		<tr id="zxy_rank">
-					    			<th width="6px" style="color: hotpink;">10.</th>
-					    			<th width="171px">饕餮之囚</th>
-					    			<th width="80px">九阶先生</th>
-					    			<th width="5px">9.6</th>
-					    		</tr>
+				    		<%
+				    		    		n++;
+					    			}
+				    			}
+					    	%>
 					    	</table>
 					        <button class="button">查看详情</button>
 				        </div>
@@ -1840,39 +861,49 @@
 			</div>
 			<!--页脚-->
 			<div class="pick"></div>
-			<div class="user_footer">
-				<div class="user_footer1" style="margin-left: 15%;">
-					<p>联系我们</p>
-					<br />
-					<p>QQ:154844812</p>
-					<br />
-					<p>TEL:0812-5422567</p>
-					<br />
-					<p>感谢您的关心</p>
-				</div>
-				<div class="user_footer1">
-					<p>常见问题</p>
-					<br />
-					<p>登录不了</p>
-					<br />
-					<p>推荐出错</p>
-					<br />
-					<p>更新不及时</p>
-				</div>
-				<div class="user_footer1">
-					<p>加入社区</p>
-					<br />
-					<p>《三色格》社区</p>
-					<br />
-					<p>百度推荐</p>
-					<br />
-					<p>广告招商</p>
-				</div>
-				<div class="user_footer1">
-					<img src="no-img/qr.png" width="100" height="100" />
-					<p>三色格微信公总号</p>
+				<div class="user_footer">
+					<div class="user_footer1">
+						<p>联系我们</p>
+						<br />
+						<p>QQ:154844812</p>
+						<br />
+						<p>TEL:0812-5422567</p>
+						<br />
+						<p>感谢您的关心</p>
+					</div>
+					<div class="user_footer1">
+						<p>常见问题</p>
+						<br />
+						<p>登录不了</p>
+						<br />
+						<p>推荐出错</p>
+						<br />
+						<p>更新不及时</p>
+					</div>
+					<div class="user_footer1">
+						<p>加入社区</p>
+						<br />
+						<p>《三色格》社区</p>
+						<br />
+						<p>百度推荐</p>
+						<br />
+						<p>广告招商</p>
+					</div>
+					<div class="user_footer1">
+						<img src="us-img/qr.png" width="100" height="100" />
+						<p>三色格微信公总号</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		<script>
+		$(function(){
+			LiftEffect({
+				"control1": ".lift-nav", 						  //侧栏电梯的容器
+				"control2": ".lift",                           //需要遍历的电梯的父元素
+				"target": [".t2",".t3",".t4"], //监听的内容，注意一定要从小到大输入
+				"current": "current" 						  //选中的样式
+			});
+		})
+		</script>
 	</body>
 </html>
