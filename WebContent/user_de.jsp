@@ -139,7 +139,7 @@
 						</label>
 					</form>
 					<%} else{%>
-						<p> 请先登录</p>
+						<a href = sign.jsp> 请先登录</a>
 					<% } %>
 				</div>
 			</div>
