@@ -281,7 +281,11 @@
 	text-align: left;
 	font-weight: normal;
 }
-#zxy_rank th:hover{
+.zxy_rank{
+	text-decoration:none;
+	color:black
+}
+.zxy_rank:hover{
 	color: hotpink;
 }
 

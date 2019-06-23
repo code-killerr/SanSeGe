@@ -157,9 +157,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -186,9 +186,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -215,9 +215,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -244,9 +244,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -273,9 +273,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -302,9 +302,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -336,9 +336,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -365,9 +365,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -394,9 +394,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -423,9 +423,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -457,9 +457,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -486,9 +486,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -515,9 +515,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -544,9 +544,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -573,9 +573,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -602,9 +602,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -636,9 +636,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -665,9 +665,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -694,9 +694,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -723,9 +723,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -757,9 +757,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -786,9 +786,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -815,9 +815,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;
@@ -844,9 +844,9 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_name() %></a></th>
-					    			<th width="120px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_author() %></a></th>
-					    			<th width="5px"><a href="#" class="zxy_rank" style="text-decoration:none;color:black" onclick="zxy_aChange()"><%=i.getB_score() %></th>
+					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
+					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>
 				    		<%
 				    		    		n++;

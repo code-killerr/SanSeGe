@@ -1,10 +1,10 @@
 function zxy_clo(){
 	document.getElementById("zxy_ad").style.display="none";
 }
-function zxy_aChange()
-{
-	document.getElementById("zxy_ad").style.color="hotpink";
-}
+//function zxy_aChange()
+//{
+//	document.getElementById("zxy_ad").style.color="hotpink";
+//}
 
 //function change(){
 //	document.getElementById("tb").className="fa fa-angle-up";
