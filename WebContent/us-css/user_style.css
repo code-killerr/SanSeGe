@@ -4,7 +4,7 @@
 }
 
 body {
-	min-width:900px
+	min-width:1300px
 	width: 100%;
 	height: auto;
 	background-color: background:#aac4bc;
@@ -15,8 +15,9 @@ body {
 }
 
 .uesr_header {
-	min-width: 900px;
+	
 	width: 100%;
+	min-width: 1300px;
 	height: 70px;
 	background-color: dimgray;
 	position: absolute;

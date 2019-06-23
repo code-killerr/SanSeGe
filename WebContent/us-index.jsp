@@ -57,10 +57,10 @@
 				<span>
 		    			<%=userEntity.getUserName()%>
 				</span>
-				
+			
 				<!----<a href="#">登录</a>
 				<a href="#">注册</a>---->
-		</div>
+			</div>
 	</div>
 	</div>
 	<!---头像下拉列表--->
@@ -76,14 +76,12 @@
 					<span class="fa fa-user"></span>
 				</a>
 			</li>
-			<%
-					}
-			 %>
 			<li>
 				<a href="DeadUser">退出登录
 					<span class="fa fa-sign-out"></span>
 				</a>
 			</li>
+			
 		</ul>
 	</div>
 	
@@ -238,7 +236,14 @@
 		</div>
 	</div>
 	
-
+<%
+					}else{
+			 %>
+			 <span>
+		    			<a href = "sign.jsp">请先登录</a>
+				</span>
+				
+			<%} %>
 
 <script>
 	$(function(){
