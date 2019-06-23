@@ -1,0 +1,422 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*头部*/
+.lxy_header{
+	width: 100%;
+	height: 70px;
+	background-color: dimgray;
+}
+
+/**页眉左半部*/
+.user_header_left{
+	width: 200px;
+	height: 50px;
+	margin: 10px 100px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+.user_header_left a{
+	text-decoration: none;
+	color: #dedede;
+}
+.user_header_left a:hover{
+	color: #EEEEEE;
+}
+/**中间*/
+.user_header_mid{
+	width: 500px;
+	height: 50px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 14px;
+	float: left;
+	position: relative;
+	top: -50px;
+	left: 180px;
+}
+.user_header_mid .user_nav li{
+	width: 92px;
+	height: 70px;
+	list-style: none;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: -10px;
+	float: left;
+}
+.user_header_mid .user_nav li:hover{
+	background-color: gray;
+}
+/**页眉右半部*/
+.user_header_right{
+	width: 500px;
+	height: 70px;
+	float: right;
+	margin-right: 8px;
+}
+/**搜索框*/
+.user_header_right .user_research{
+	width: 220px;
+	height: 30px;
+	margin: 22px 12px;
+	border-radius: 50px 50px;
+	background-color: white;
+	}
+.user_header_right .user_research input{
+	width: 150px;
+	height: 23px;
+	margin-left: 17px;
+	outline: none;
+	border-color: transparent;
+}
+.user_header_right .user_research button{
+	outline: none !important;
+	border: none;
+	color:dimgray ;
+	background-color: transparent;
+	width: 24px;
+	height: 28px;
+	margin-left: 13px;
+}
+.user_header_right .user_research button:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+/**用户登录/注册**/
+.user_header_right .user_name{
+	width: 100px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: -78px;
+	right: 20px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+}
+.user_header_right .user_name a{
+	color: #EEEEEE;
+}
+.user_header_right .user_name a:hover{
+	color: #EEEEEE;
+	color: #FFFFFF;
+}
+.lxy_nav{
+	width: 100%;
+	height: 35px;
+	background-color: #9ebde3;
+}
+.lxy_nav div{
+	width: 260px;
+	height: 35px;
+	margin: 0px 0px 0px 48.5%;
+	line-height: 35px;
+}
+.lxy_nav div ul li{
+	list-style: none;
+	float: left;
+	text-align: center;
+	color: white;
+}
+.lxy_nav div ul li:hover{
+	background-color:  #698fd1;
+}
+.lxy_nav1{
+	width: 100%;
+	height:35px;
+	background-color: #9ebde3;
+}
+.lxy_nav1 div{
+	width: 260px;
+	height: 35px;
+	margin: 0px 0px 0px 12%;
+	font-size: 12px;
+	color: white;
+	line-height: 35px;
+
+}
+.lxy_nav1 div span a{
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 1px;
+	color: white;
+	cursor: pointer;
+	margin: 4px;
+	
+}
+
+/*轮播图*/
+.lxy_p{
+	width: 100%;
+	height: 400px;
+	background-color: antiquewhite;
+}
+/*主体*/
+.lxy_main{
+	width: 100%;
+	height: 1600px;
+	background-color: #9ebde3;
+}
+.lxy_main1{
+	width: 80%;
+	height:100%;
+	background-color: white;
+	margin: 0 auto;
+
+}
+/*书单推荐*/
+.lxy_book{
+	width: 75%;
+	height: 100%;
+	float: left;
+	background-color: aliceblue;
+}
+.lxy_book_title{
+	width: 100%;
+	height: 50px;
+	margin-top: 60px;
+	margin-left: 20px;
+}
+.lxy_book_title_1{
+	width: 80%;
+	height: 55px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	line-height: 50px;
+	border-bottom: 1px solid darkgray;
+}
+.lxy_book_title a{
+	color: #333333;
+	font-size: 30px;
+	font-weight: bold;
+}
+.lxy_booklist{
+	width: 100%;
+	height: 40px;
+    height: 40px;
+    position: relative;
+    left: 17px;
+	margin-bottom: 10px;
+}
+.lxy_booklist1{
+	width: 150px;
+	margin-right: 50px;
+	height: 40px;
+	float: left;
+	color: #666666;
+	text-align: center;
+    line-height: 40px;
+}
+/*人气作者*/
+.lxy_wr{
+	width: 25%;
+	height: 1600px;
+	float: left;
+	background-color: aliceblue;
+}
+.tiles {
+
+  width: 100%;
+  height:100%;
+  padding-top: 60px;
+}
+.lxy_box{
+	width: 160px;
+	height: 160px;
+	float: left;
+	margin: 0px 20px 20px 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.lxy_box a{
+	line-height: 160px;
+	color: #FFFFFF;
+	font-size: 20px;	
+}
+.lxy_bg1{
+	background-color: #b3c9e1;
+}
+.lxy_bg2{
+	background-color: #C1E2B3;
+}
+.lxy_bg3{
+	background-color: #CCCCCC;
+}
+.lxy_bg4{
+	background-color: #EBCCD1;
+}
+.lxy_bg5{
+	background-color: #b6d3e2;
+	}
+.lxy_bg6{
+	background-color: #edd2a4;
+}
+.lxy_bg7{
+	background-color: #c1dfd3;
+}
+.lxy_bg8{
+	background-color: #bfdae5;
+}
+
+
+/*页尾*/
+.lxy_footer{
+	width: 100%;
+	height: 300px;
+	background-color: darkgrey;
+}
+.user_footer{
+	width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+}
+.user_footer1{
+	width: 180px;
+	height: 200px;
+	float: left;
+	margin: 50px 67px;
+	font-size: 14px;
+	color: white;
+	font-family: "微软雅黑";
+	text-align: center;
+	line-height: 25px;
+}
+.user_footer1 p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.user_footer1 img{
+	margin-top: 20px;
+}
+/*r_book页面*/
+.rb_main{
+	width: 100%;
+	height: 1200px;
+	background-color: #e5eaf1;
+}
+.rb_main_left{
+	width:54% ;
+	height: 100%;
+	margin-left: 150px;
+	float: left;
+}
+.rb_main_right{
+	width:20% ;
+	height: 100%;
+	float: left;
+	margin-top: 40px;
+	margin-left: 70px;
+	
+}
+.b_data{
+	width: 100%;
+	height: 280px;
+	margin-top: 40px;
+
+}
+.b_cover{
+	width:140px ;
+	height: 209px;
+	margin-right: 20px;
+	float: left;
+	background-image:url(../r_images/yl.jpg) ;
+}
+.b_data p{
+	margin-bottom: 15px;
+}
+.b_data span{
+	font-size: 12px;
+}
+.b_data span a{
+	color: cadetblue;
+	cursor: pointer;
+}
+.bookloving{
+	width: 80px;
+	height: 32px;
+	float: right;
+	background-color: cadetblue;
+	position: relative;
+    top: -16px;
+    left: -12px;
+    text-align: center;
+}
+.bookloving span{
+	font-size: 14px;
+	color:  white;
+	line-height: 32px;
+}
+.book_dicription h3{
+	font-size: 18px;
+	margin-bottom: 20px;
+	margin-top: 70px;
+}
+.book_dicription p{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.b_commend{
+	width: 100%;
+}
+.commend_list{
+	width: 90px;
+	height: 300px;
+	margin-right: 58px;
+	float: left;
+
+}
+.commend_list p{
+	font-size: 12px;
+}
+.b_p_cover{
+	width: 48px;
+	height: 48px;
+	margin-top: 15px;
+	background-image: url(../r_images/cbs.jpg);
+	-webkit-background-size: 48px;
+	float: left;
+}
+.b_publish h4{
+	margin-top: 15px;
+}
+.b_publish p{
+	font-size: 12px;
+	line-height: 24px;
+}
+.b_publish p a{
+	color: cadetblue;
+	cursor: pointer;
+}
+.b_label{
+	margin-top: 30px;
+
+}
+.b_label h4{
+	margin-bottom: 20px;
+}
+.b_label ul{
+	list-style: none;
+
+	
+}
+.b_label ul li{
+    line-height: 1;
+    margin: 0 7px 6px 0;
+    padding: 6px 10px;
+    background-color: #389eac;
+    color: #fff;
+    border-radius: 24px;
+    float: left;
+}
+.b_label ul li span{
+	font-size: 11px;
+}
+.b_label ul li a{
+	color: whitesmoke;
+	font-size: 11px;
+	
+}

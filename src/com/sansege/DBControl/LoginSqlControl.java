@@ -176,4 +176,36 @@ public class LoginSqlControl {
 			}
 			return i;
 		}
+		
+		public ArrayList<BookEntity> selectAllBook(){
+			
+			ArrayList<BookEntity> list =new ArrayList<BookEntity>();
+			ResultSet rs=null;
+			BookEntity book=null;
+			String sql="select * from book";
+			Object[] values= {};
+			try {
+				rs=help.search(sql, values);
+				while(rs.next()) {
+					book = new BookEntity();
+					book.setB_isbn(rs.getString("b_isbn"));
+					book.setB_auabstract(rs.getString("b_auabstract"));
+					book.setB_author(rs.getString("b_author"));
+					book.setB_coabstract(rs.getString("b_coabstract"));
+					book.setB_cover(rs.getString("b_cover"));
+					book.setB_name(rs.getString("b_name"));
+					book.setB_publish(rs.getString("b_publish"));
+					book.setB_score(rs.getDouble("b_score"));
+					book.setB_year(rs.getString("b_year"));
+					
+					list.add(book);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return list;
+			
+		}
 }
