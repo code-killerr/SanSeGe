@@ -4,7 +4,7 @@
 }
 
 body {
-	min-width:1300px
+	min-width:1300px;
 	width: 100%;
 	height: auto;
 	background-color: background:#aac4bc;
@@ -58,7 +58,7 @@ body {
 	float: left;
 	position: relative;
 	top: -50px;
-	left: 360px;
+	left: 90%;
 }
 
 .user_header_mid .user_nav li {
@@ -79,10 +79,9 @@ body {
 /**妞ょ數婀侀崣鍐插磹闁拷*/
 
 .user_header_right {
-	width: 340px;
 	height: 70px;
 	float: right;
-	margin-right: 200px;
+	margin-right: 12%;
 }
 
 
@@ -122,12 +121,11 @@ body {
 /**閻€劍鍩涢惂璇茬秿/濞夈劌鍞�**/
 
 .user_header_right .user_name {
-	width: 70px;
 	height: 70px;
 	float: right;
 	position: relative;
 	top: -70px;
-	right: -70px;
+	left:37%;
 	text-align: center;
 	line-height: 100px;
 	font-size: 14px;
@@ -149,7 +147,7 @@ body {
 	position: relative;
 	z-index: 200;
 	top: -130px;
-	right: 230px;
+	right: 12%;
 	float: right;
 	background-color: #dedede;
 	border-radius: 0 0 10px 10px;
