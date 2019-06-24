@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Welcome 喵音乐</title>
-		<link rel="shortcut icon" href="am-img/atitle.ico" />
+		<title>三色格_音乐盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="am-css/amusic.css" />
 		<script type="text/javascript" src="am-js/amusic.js"></script>   <!--调用js--->
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
@@ -17,7 +17,7 @@
 		<!--固定导航栏-->
 		<div class="uesr_header">
 				<div class="user_header_left">
-					<img src="am-img/3sg.png"/>
+					<img src="us-img/logo.png" />
 					<a href="#">三色格</a>
 					<div class="user_header_mid">
 						<ul class="user_nav">
@@ -437,7 +437,7 @@
 				</div>
 				<!--全部音乐-->
 				<div class="all">
-					<a href="#">全部音乐</a>
+					<a href="amusic2.jsp">全部音乐</a>
 				</div>
 			</div>
 		</div>

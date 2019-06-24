@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>三色格_电影盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="am-css/style.css" />
 		<link rel="stylesheet" href="css/zy.css" />
 		<link rel="stylesheet"href="font-awesome-4.7.0/css/font-awesome.min.css" />

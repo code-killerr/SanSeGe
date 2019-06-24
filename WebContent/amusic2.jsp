@@ -6,8 +6,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Welcome 喵音乐</title>
-		<link rel="shortcut icon" href="img/blogo.ico"/>
+		<title>三色格_音乐盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="am2-css/bfile.css" />
 		<link rel="stylesheet"  href="am2-font-awesome-4.7.0/css/font-awesome.min.css"/>
 		<script type="text/javascript" src="am2-js/bile.js"></script>
@@ -17,7 +17,7 @@
 		<!--固定导航栏-->
 		<div class="uesr_header">
 				<div class="user_header_left">
-					<img src="am2-img/3sg.png"/>
+					<img src="us-img/logo.png" />
 					<a href="#">三色格</a>
 					<div class="user_header_mid">
 						<ul class="user_nav">
