@@ -22,16 +22,16 @@
 					<div class="user_header_mid">
 						<ul class="user_nav">
 							<li>
-								<a href="#">首页</a>
+								<a href="index.jsp">首页</a>
 							</li>
 							<li>
-								<a href="#">音乐</a>
+								<a href="amusic.jsp">音乐</a>
 							</li>
 							<li>
-								<a href="#">电影</a>
+								<a href="mfirst.jsp">电影</a>
 							</li>
 							<li>
-								<a href="#">书籍</a>
+								<a href="noval.jsp">书籍</a>
 							</li>
 						</ul>
 					</div>
@@ -437,13 +437,13 @@
 				</div>
 				<!--全部音乐-->
 				<div class="all">
-					<a href="amusic2.jsp">全部音乐</a>
+					<a href="#">全部音乐</a>
 				</div>
 			</div>
 		</div>
 		<div class="pick"></div>
 			<div class="user_footer">
-				<div class="user_footer1" style="margin-left: 250px  !important; ">
+				<div class="user_footer1" style="margin-left: 380px; !important; ">
 					<p>联系我们</p>
 					<br />
 					<p>QQ:154844812</p>

@@ -5,41 +5,43 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<link rel="stylesheet" href="am-css/style.css" />
 		<link rel="stylesheet" href="css/zy.css" />
 		<link rel="stylesheet"href="font-awesome-4.7.0/css/font-awesome.min.css" />
 	</head>
 	<body>
-	<!--导航栏-->
-		<div class="aa">
-		<div class="bb">
-		<div class="cc"></div>
-		<div class="dd">
-		<a href="#">首页</a>
-		<span>|</span>
-		<a href="#">导航</a>
-		</div>
-		<div class="ee">
-		<input style="outline: none;"/>
-		<div class="gg">
-		<a class="fa fa-random "></a>
-		<p>热搜榜</p>
-		</div>
-		<div class="hh">
-		<a class="fa fa-search "></a>
-		<p>搜全网</p>
-		</div>
-		</div>
-		<div class="ff">
-		<ul>
-		   <li class="fa fa-viacoin">VIP</li>
-		   <li class="fa fa-upload">上传</li>
-		   <li class="fa fa-download">客服端</li>
-		   <li class="fa fa-info">消息</li>
-		   <li class="fa fa-clock-o">看过</li>
-		</ul>
-		   <div class="ii"></div>
-		</div>
-		</div>
+<div class="uesr_header">
+				<div class="user_header_left">
+					<img src="img/biglogo.png"/>
+					<a href="#">三色格</a>
+					<div class="user_header_mid">
+						<ul class="user_nav">
+							<li>
+								<a href="index.jsp">首页</a>
+							</li>
+							<li>
+								<a href="amusic.jsp">音乐</a>
+							</li>
+							<li>
+								<a href="mfirst.jsp">电影</a>
+							</li>
+							<li>
+								<a href="noval.jsp">书籍</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="user_header_right">
+					<div class="user_research">
+						<input type="text" placeholder="搜索更多你想要的"/>
+						<button class="fa fa-search"></button>
+					</div>
+					<div class="user_name">
+						<a href="sign.jsp">登录</a>
+						<a href="sign.jsp">注册</a>
+					</div>
+				</div>
+			</div>
 		<div class="jj">
 			 <div class="oo">热播榜</div>
 		<ul>
@@ -120,35 +122,42 @@
 			<span class="page">10</span>
 			<span class="page a1">下一页</span>
 		</div>
-		<div class="uu">
-			<a href="//www.iqiyi.com/common/aboutus.html" rel="nofollow" title="公司介绍" rseat="711219_footer_aboutus" target="_blank" class="footer-menu-link">公司介绍</a>
-			<i class="footer-line">|</i>
-			<a href="//www.iqiyi.com/common/news.html" rel="nofollow" title="新闻动态" rseat="711219_footer_news" target="_blank" class="footer-menu-link">新闻动态</a>
-			<i class="footer-line">|</i>
-			<a href="//www.iqiyi.com/common/contactus.html" rel="nofollow" title="联系方式" rseat="711219_footer_contactus" target="_blank" class="footer-menu-link">联系方式</a>
-			<i class="footer-line">|</i>
-			<a href="//zhaopin.iqiyi.com" rel="nofollow" title="招聘英才" rseat="711219_footer_zhaopin" target="_blank" class="footer-menu-link">招聘英才</a>
-			<i class="footer-line">|</i> 
-			
-			<a href="//open.iqiyi.com/" rel="nofollow" title="开放平台" rseat="711219_footer_open" target="_blank" class="footer-menu-link">开放平台</a> 
-			<i class="footer-line">|</i>
-			
-			
-			<a href="//help.iqiyi.com/" rel="nofollow" title="帮助中心" rseat="711219_footer_help" target="_blank" class="footer-menu-link">帮助中心</a>
-			<i class="footer-line">|</i> 
-			<a href="//www.iqiyi.com/common/copyright.html?entry=iqiyi" rel="nofollow" rseat="711219_footer_copyright" title="侵权投诉" target="_blank" class="footer-menu-link">侵权投诉</a>
-			<i class="footer-line">|</i>
-			<a href="//www.iqiyi.com/user/register/protocol.html " rel="nofollow" rseat="711219_footer_userproto" title="用户协议" target="_blank" class="footer-menu-link">用户协议</a>
-			<i class="footer-line">|</i>
-			<a href="//www.iqiyi.com/common/secret.html" rel="nofollow" rseat="711219_footer_policy" title="隐私政策" target="_blank" class="footer-menu-link">隐私政策</a> 
-			<i class="footer-line">|</i>
-			<a href="//www.iqiyi.com/common/20100420/n4813.html" rel="nofollow" title="AboutUs" rseat="711219_footer_aboutus_international" target="_blank" class="footer-menu-link">About Us</a>
-		</div>
-		<div class="vv">
-			<a href="//www.iqiyi.com/common/announce.html" target="blank" class="copyright-lk">反盗版和反盗链权利声明</a>
-			&nbsp;&nbsp;&nbsp; Copyright © 2019
-                
-                <span>All Rights Reserved</span></div>
+		 <!--页脚-->
+		    <div class="pick">
+				<div class="user_footer">
+					<div class="user_footer1">
+						<p>联系傲视我们</p>
+						<br />
+						<p>QQ:154844812</p>
+						<br />
+						<p>TEL:0812-5422567</p>
+						<br />
+						<p>感谢您的关心</p>
+					</div>
+					<div class="user_footer1">
+						<p>常见问题</p>
+						<br />
+						<p>登录不了</p>
+						<br />
+						<p>推荐出错</p>
+						<br />
+						<p>更新不及时</p>
+					</div>
+					<div class="user_footer1">
+						<p>加入社区</p>
+						<br />
+						<p>《三色格》社区</p>
+						<br />
+						<p>百度推荐</p>
+						<br />
+						<p>广告招商</p>
+					</div>
+					<div class="user_footer1">
+						<img src="img/qr.png" width="100" height="100" />
+						<p>三色格微信公总号</p>
+					</div>
+				</div>
+			</div>	
 		</div>
 	</body>
 </html>

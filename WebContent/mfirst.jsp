@@ -20,16 +20,16 @@
 					<div class="user_header_mid">
 						<ul class="user_nav">
 							<li>
-								<a href="#">首页</a>
+								<a href="index.jsp">首页</a>
 							</li>
 							<li>
-								<a href="#">音乐</a>
+								<a href="amusic.jsp">音乐</a>
 							</li>
 							<li>
-								<a href="#">电影</a>
+								<a href="mfirst.jsp">电影</a>
 							</li>
 							<li>
-								<a href="#">书籍</a>
+								<a href="noval.jsp">书籍</a>
 							</li>
 						</ul>
 					</div>
