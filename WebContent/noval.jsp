@@ -35,10 +35,10 @@
 						<a href="#">音乐</a>
 					</li>
 					<li>
-						<a href="#">电影</a>
+						<a href="FilmServlet">电影</a>
 					</li>
 					<li>
-						<a href="#">书籍</a>
+						<a href="BookServlet">书籍</a>
 					</li>
 				</ul>
 			</div>

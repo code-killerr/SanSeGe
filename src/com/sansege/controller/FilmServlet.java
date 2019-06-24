@@ -10,35 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sansege.DBControl.LoginSqlControl;
-import com.sansege.enuity.BookEntity;
+import com.sansege.enuity.FilmEntity;
 
-/**
- * Servlet implementation class BookServlet
- */
-@WebServlet("/BookServlet")
-public class BookServlet extends HttpServlet {
+
+@WebServlet("/FilmServlet")
+public class FilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+    public FilmServlet() {
+        super();
+    }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		doPost(request,response);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		ArrayList<BookEntity> list =null;
+		ArrayList<FilmEntity> list= null;
 		try {
 			LoginSqlControl dao = new LoginSqlControl();
-			
-			list = dao.selectAllBook();
-			
+			list =dao.queryfilm();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(list!=null) {
-			request.getSession().setAttribute("book", list);
+			request.getSession().setAttribute("film", list);
 		}
-		response.sendRedirect("noval.jsp");
+		response.sendRedirect("mfirst.jsp");
 	}
-
 }

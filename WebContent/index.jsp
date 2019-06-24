@@ -293,7 +293,7 @@
 									<div class="film film2"></div>
 									<div class="film film3"></div>
 									<div class="film film4"></div>
-									<a onclick="window.location='mfirst.jsp'">
+									<a onclick="window.location='FilmServlet'">
 										<div class="filmbtn">
 											<p>打开格子看电影</p>
 										</div>

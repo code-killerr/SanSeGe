@@ -1,3 +1,6 @@
+<%@page import="com.sansege.enuity.UserEntity"%>
+<%@page import="com.sansege.enuity.FilmEntity"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -26,10 +29,10 @@
 								<a href="#">音乐</a>
 							</li>
 							<li>
-								<a href="#">电影</a>
+								<a href="FilmServlet">电影</a>
 							</li>
 							<li>
-								<a href="#">书籍</a>
+								<a href="BookServet">书籍</a>
 							</li>
 						</ul>
 					</div>
@@ -158,23 +161,38 @@
 					<div class="Yintro">《复仇者联盟4》</div>
 					<div class="Yothers">
 						<ul class="Ylist">
+							<%
+					    		ArrayList<FilmEntity> list = (ArrayList<FilmEntity>)session.getAttribute("film");
+					    	%>
+							<%
+								if(list!=null)
+				    			{
+				    				for(FilmEntity i: list){
+							%>
+							
 							<li>
 								<div class="Yexam">
 									<div class="Ypicture">
 										<a href="">
-											<img src="img/lldq.jpg" style="width: 230px;height: 300px;" />
+											<img src="<%=i.getF_poster() %>" style="width: 230px;height: 300px;" />
 										</a>
 									</div>
 									<div class="Yminintro">
-										<a href="">流浪地球</a>
+										<a href=""><%=i.getF_name()%></a>
 										<!--点赞评分系统-->
-										<span id="Ymark">8.5</span>
+										<span id="Ymark"><%=i.getF_grade() %></span>
 										<span class="fa fa-thumbs-o-down" id="Ydislike" onclick="dislike()"></span>
 										<span class="fa fa-thumbs-o-up" id="Ylike" onclick="like()"></span>
-										<p class="Ysyn">中国科幻电影元年</p>
+										<p class="Ysyn"><%=i.getF_focus() %></p>
 									</div>
 								</div>
-							</li>
+							
+							<%
+				    				}
+				    			}
+							%>
+
+							<!--  
 							<li>
 								<div class="Yexam">
 									<div class="Ypicture">
@@ -184,7 +202,7 @@
 									</div>
 									<div class="Yminintro">
 										<a href="">变形金刚5</a>
-										<!--点赞评分系统-->
+										
 										<span id="Ymark">8.0</span>
 										<span class="fa fa-thumbs-o-down" id="Ydislike2" onclick="dislike2()"></span>
 										<span class="fa fa-thumbs-o-up" id="Ylike2" onclick="like2()"></span>
@@ -201,7 +219,7 @@
 									</div>
 									<div class="Yminintro">
 										<a href="">海王</a>
-										<!--点赞评分系统-->
+										
 										<span id="Ymark">8.7</span>
 										<span class="fa fa-thumbs-o-down" id="Ydislike3" onclick="dislike3()"></span>
 										<span class="fa fa-thumbs-o-up" id="Ylike3" onclick="like3()"></span>
@@ -209,6 +227,7 @@
 									</div>
 								</div>
 							</li>
+							-->
 						</ul>
 					</div>
 				</div>

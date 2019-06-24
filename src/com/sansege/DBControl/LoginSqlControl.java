@@ -208,4 +208,27 @@ public class LoginSqlControl {
 			return list;
 			
 		}
+		public ArrayList<FilmEntity> queryfilm(){
+			ArrayList<FilmEntity> list=new ArrayList<FilmEntity>();
+			ResultSet rs=null;
+			FilmEntity film=null;
+			String sql="SELECT * FROM film";
+			Object[] values= {};
+			try {
+				rs=help.search(sql, values);
+				while(rs.next()) {
+					film =new FilmEntity();
+					film.setF_name(rs.getString("f_name"));
+					film.setF_focus(rs.getString("f_focus"));
+					film.setF_grade(rs.getDouble("f_grade"));
+					film.setF_poster(rs.getString("f_poster"));
+					list.add(film);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+
 }
