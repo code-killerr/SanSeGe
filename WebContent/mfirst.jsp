@@ -7,7 +7,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>电影</title>
+		<title>三色格_电影盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="icon" href=" img/movieslogo.ico" type="image/x-icon"/>
 		<link rel="stylesheet" href="css/mfirst.css" />
 		<link rel="stylesheet" type="text/css" href="css/fstyle.css" />
@@ -23,10 +24,10 @@
 					<div class="user_header_mid">
 						<ul class="user_nav">
 							<li>
-								<a href="#">首页</a>
+								<a href="index.jsp">首页</a>
 							</li>
 							<li>
-								<a href="#">音乐</a>
+								<a href="amusic.jsp">音乐</a>
 							</li>
 							<li>
 								<a href="FilmServlet">电影</a>

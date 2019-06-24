@@ -4,8 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Welcome 喵音乐</title>
-		<link rel="shortcut icon" href="am-img/atitle.ico" />
+		<title>三色格_音乐盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="am-css/amusic.css" />
 		<script type="text/javascript" src="am-js/amusic.js"></script>   <!--调用js--->
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
@@ -17,21 +17,21 @@
 		<!--固定导航栏-->
 		<div class="uesr_header">
 				<div class="user_header_left">
-					<img src="am-img/3sg.png"/>
+					<img src="us-img/logo.png" />
 					<a href="#">三色格</a>
 					<div class="user_header_mid">
 						<ul class="user_nav">
 							<li>
-								<a href="#">首页</a>
+								<a href="index.jsp">首页</a>
 							</li>
 							<li>
-								<a href="#">音乐</a>
+								<a href="amusic.jsp">音乐</a>
 							</li>
 							<li>
-								<a href="#">电影</a>
+								<a href="mfirst.jsp">电影</a>
 							</li>
 							<li>
-								<a href="#">书籍</a>
+								<a href="noval.jsp">书籍</a>
 							</li>
 						</ul>
 					</div>
@@ -437,13 +437,13 @@
 				</div>
 				<!--全部音乐-->
 				<div class="all">
-					<a href="#">全部音乐</a>
+					<a href="amusic2.jsp">全部音乐</a>
 				</div>
 			</div>
 		</div>
 		<div class="pick"></div>
 			<div class="user_footer">
-				<div class="user_footer1" style="margin-left: 250px  !important; ">
+				<div class="user_footer1" style="margin-left: 380px; !important; ">
 					<p>联系我们</p>
 					<br />
 					<p>QQ:154844812</p>

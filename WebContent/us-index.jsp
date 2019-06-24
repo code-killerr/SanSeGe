@@ -1,4 +1,6 @@
 <%@page import ='com.sansege.enuity.*' %>
+<%@page import ='com.sansege.DBControl.LoginSqlControl' %>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html >
@@ -30,16 +32,16 @@
 			<div class="user_header_mid">
 				<ul class="user_nav">
 					<li>
-						<a href="#">首页</a>
+						<a href="index.jsp">首页</a>
 					</li>
 					<li>
-						<a href="#">音乐</a>
+						<a href="amusic.jsp">音乐</a>
 					</li>
 					<li>
-						<a href="#">电影</a>
+						<a href="mfirst.jsp">电影</a>
 					</li>
 					<li>
-						<a href="#">书籍</a>
+						<a href="noval.jsp">书籍</a>
 					</li>
 				</ul>
 			</div>
@@ -107,30 +109,17 @@
 			</div>
 			<p class="more">查看更多>></p>
 			<div class="user_musicloving">
-				<div class="user_musicloving_1">
-					<img src="us-img/eason.jpeg" width="70" height="70"/>
-					<p>浮夸——陈奕迅</p>
+			<% int id = userEntity.getUseId();
+			LoginSqlControl control = new LoginSqlControl();
+			List<MusicEntity> music = control.User_Favorite_Music(id);
+			if(music != null)
+				for(MusicEntity i : music){
+			%>
+				<div>
+					<img src="<%=i.getcover() %>" width="70" height="70"/>
+					<p><%=i.getname() %></p>
 				</div>
-				<div class="user_musicloving_2">
-					<img src="us-img/yilei.jpg" width="70" height="70"/>
-					<p>异类——华晨宇</p>
-				</div>
-				<div class="user_musicloving_3">
-					<img src="us-img/red.jpg" width="70" height="70"/>
-					<p>Red——taylor swift</p>
-				</div>
-				<div class="user_musicloving_1">
-					<img src="us-img/wct.jpg" width="70" height="70"/>
-					<p>往春天——金志文</p>
-				</div>
-				<div class="user_musicloving_2">
-					<img src="us-img/missu.jpg" width="70" height="70"/>
-					<p>MISS U——尤长靖</p>
-				</div>
-				<div class="user_musicloving_3">
-					<img src="us-img/bs.jpg" width="70" height="70"/>
-					<p>彼时——张碧晨</p>
-				</div>
+				<%} %>
 			</div>
 		</div>
 		<!---电影--->
@@ -140,30 +129,16 @@
 			</div>
 			<p class="more">查看更多>></p>
 			<div class="user_movieloving">
-				<div class="user_movieloving_1">
-					<img src="us-img/wmzb.jpg" width="70" height="70"/>
-					<p>《无名之辈》</p>
+			<%
+			List<FilmEntity> film = control.User_Favorite_Film(id);
+			if(film != null)
+				for(FilmEntity i : film){
+			%>
+				<div>
+					<img src="<%=i.getF_poster() %>" width="70" height="70"/>
+					<p><%=i.getF_name() %></p>
 				</div>
-				<div class="user_movieloving_2">
-					<img src="us-img/yaoshen.jpg" width="70" height="70"/>
-					<p>《我不是药神》</p>
-				</div>
-				<div class="user_movieloving_3">
-					<img src="us-img/labjb.jpg" width="70" height="70"/>
-					<p>《NoteBook》</p>
-				</div>
-				<div class="user_movieloving_1">
-					<img src="us-img/lldq.jpg" width="70" height="70"/>
-					<p>《流浪地球》</p>
-				</div>
-				<div class="user_movieloving_2">
-					<img src="us-img/xlgs3.jpg" width="70" height="70"/>
-					<p>《寻龙高手3》</p>
-				</div>
-				<div class="user_movieloving_3">
-					<img src="us-img/ynyx.jpg" width="70" height="70"/>
-					<p>《欲念游戏》</p>
-				</div>
+				<%} %>
 			</div>
 		</div>
 		<!---书籍--->
@@ -173,30 +148,16 @@
 			</div>
 			<p class="more">查看更多>></p>
 			<div class="user_booksloving">
-				<div class="user_booksloving_1">
-					<img src="us-img/tgkw.jpg" width="70" height="70"/>
-					<p>《天工开物》</p>
+			<%
+			List<BookEntity> book = control.User_Favorite_Book(id);
+			if(book != null)
+				for(BookEntity i : book){
+			%>
+				<div>
+					<img src="<%=i.getB_cover() %>" width="70" height="70"/>
+					<p><%=i.getB_name() %></p>
 				</div>
-				<div class="user_booksloving_2">
-					<img src="us-img/yj.jpg" width="70" height="70"/>
-					<p>《易经》</p>
-				</div>
-				<div class="user_booksloving_3">
-					<img src="us-img/p.jpg" width="70" height="70"/>
-					<p>《飘》</p>
-				</div>
-				<div class="user_booksloving_1">
-					<img src="us-img/zsss.jpg" width="70" height="70"/>
-					<p>《枕上诗书》</p>
-				</div>
-				<div class="user_booksloving_2">
-					<img src="us-img/nsrjsyt.jpg" width="70" height="70"/>
-					<p>《你是人间四月天》</p>
-				</div>
-				<div class="user_booksloving_3">
-					<img src="us-img/ly.jpg" width="70" height="70"/>
-					<p>《蓝夜》</p>
-				</div>
+				<%} %>
 			</div>
 		</div>
 		<!--页脚-->

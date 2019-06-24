@@ -177,6 +177,88 @@ public class LoginSqlControl {
 			return i;
 		}
 		
+		public List<MusicEntity> User_Favorite_Music(int userId) throws SQLException {
+			String sql = "Select m_no from user_favorite_music where userid = ?";
+			Object[] objects = {userId};
+			ResultSet rs1 = help.search(sql, objects);
+			List<MusicEntity> music = new ArrayList<MusicEntity>();
+			while(rs1.next()) {
+				sql = "Select * from music where m_no = ?";
+				
+				Object[] objects1 = {rs1.getInt(1)};
+				ResultSet rs = help.search(sql, objects1);
+				while(rs.next()) {
+					MusicEntity entity = new MusicEntity();
+					entity.setno(rs.getInt("m_no"));
+					entity.setname(rs.getString("m_name"));
+					entity.setsinger(rs.getString("m_singer"));
+					entity.setlyricist(rs.getString("m_lyricist"));
+					entity.setcomposer(rs.getString("m_composer"));
+					entity.setalbum(rs.getString("m_album"));
+					entity.setcover(rs.getString("m_cover"));
+					music.add(entity);
+				}
+			}
+			
+			return music;
+			
+		}
+		public List<FilmEntity> User_Favorite_Film(int userId) throws SQLException{
+			String sql = "Select f_id from user_favorite_film where userid = ?";
+			Object[] objects = {userId};
+			ResultSet rs1 = help.search(sql, objects);
+			List<FilmEntity> film = new ArrayList<FilmEntity>();
+			while(rs1.next()) {
+				sql = "Select * from film where f_id = ?";
+				Object[] objects1 = {rs1.getInt(1)};
+				ResultSet rs = help.search(sql, objects1);
+				while(rs.next()) {
+					FilmEntity entity = new FilmEntity();
+					entity.setF_id(rs.getInt("f_id"));
+					entity.setF_name(rs.getString("f_name"));
+					entity.setF_type(rs.getString("f_type"));
+					entity.setF_poster(rs.getString("f_poster"));
+					entity.setF_director(rs.getString("f_director"));
+					entity.setF_star(rs.getString("f_star"));
+					entity.setF_focus(rs.getString("f_focus"));
+					entity.setF_time(rs.getString("f_time"));
+					entity.setF_play(rs.getInt("f_play"));
+					entity.setF_time(rs.getString("f_time"));
+					entity.setF_intro(rs.getString("f_intro"));
+					entity.setF_grade(rs.getDouble("f_grade"));
+					entity.setF_good(rs.getInt("f_good"));
+					entity.setF_bad(rs.getInt("f_bad"));
+					film.add(entity);
+				}
+			}
+			return film;
+		}
+		public List<BookEntity> User_Favorite_Book(int userId) throws SQLException{
+			String sql = "Select b_isbn from user_favorite_book where userid = ?";
+			Object[] objects = {userId};
+			ResultSet rs1 = help.search(sql, objects);
+			List<BookEntity> bookl = new ArrayList<BookEntity>();
+			while(rs1.next()) {
+				sql = "Select * from book where b_isbn = ?";
+				Object[] objects1 = {rs1.getString(1)};
+				ResultSet rs = help.search(sql, objects1);
+				while(rs.next()) {
+					BookEntity book = new BookEntity();
+					book.setB_isbn(rs.getString("b_isbn"));
+					book.setB_auabstract(rs.getString("b_auabstract"));
+					book.setB_author(rs.getString("b_author"));
+					book.setB_coabstract(rs.getString("b_coabstract"));
+					book.setB_cover(rs.getString("b_cover"));
+					book.setB_name(rs.getString("b_name"));
+					book.setB_publish(rs.getString("b_publish"));
+					book.setB_score(rs.getDouble("b_score"));
+					book.setB_year(rs.getString("b_year"));
+					bookl.add(book);
+				}
+			}
+			return bookl;
+		}
+		
 		public ArrayList<BookEntity> selectAllBook(){
 			
 			ArrayList<BookEntity> list =new ArrayList<BookEntity>();
