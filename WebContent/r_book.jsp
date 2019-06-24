@@ -10,68 +10,104 @@
 		<title>三色格_书籍盒子</title>
 		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="no-css/readstyle.css" />
-		<link rel="stylesheet" href="us-css/user_style.css" />
+		<link rel="stylesheet" href="us-css/user_style2.css">
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
 	</head>
 	<body>
 		<!--导航栏-->
-		<div class="lxy_header">
-					<div class="user_header_left">
-					<img src="no-img/logo.png"/>
-					<a href="#">三色格</a>
-					<div class="user_header_mid">
-						<ul class="user_nav">
-							<li>
-								<a href="#">首页</a>
-							</li>
-							<li>
-								<a href="#">音乐</a>
-							</li>
-							<li>
-								<a href="#">电影</a>
-							</li>
-							<li>
-								<a href="#">书籍</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="user_header_right">
-					<div class="user_research">
-						<input type="text" placeholder="搜索更多你想要的"/>
-						<button class="fa fa-search"></button>
-					</div>
-					<div class="user_name">
-						<a href="#">登录</a>
-						<a href="#">注册</a>
-					</div>
-				</div>
-			
+		<div class="uesr_header">
+		<div class="user_body">
+			<p>选择今天的天气：</p>
+			<span class="fa fa-sun-o" id="weatherchoose1" onclick="getans1()" on="loseans1()"></span>
+			<span class="fa fa-cloud" id="weatherchoose2" onclick="getans2()"></span>
+			<span class="fa fa-snowflake-o" id="weatherchoose3" onclick="getans3()"></span>
 		</div>
+		<div class="user_header_left">
+			<img src="us-img/logo.png"/>
+			<a href="#">三色格</a>
+			<div class="user_header_mid">
+				<ul class="user_nav">
+					<li>
+						<a href="index.jsp">首页</a>
+					</li>
+					<li>
+						<a href="amusic.jsp">音乐</a>
+					</li>
+					<li>
+						<a href="mfirst.jsp">电影</a>
+					</li>
+					<li>
+						<a href="noval.jsp">书籍</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="user_header_right">
+			<div class="user_research">
+				<input type="text" placeholder="搜索更多你想要的"/>
+				<button class="fa fa-search"></button>
+			</div>
+			<div class="user_name" onmouseover="show()" onmouseout="recover()">
+				<%
+					UserEntity UserEntity = (UserEntity)session.getAttribute("userDate");
+				    if(UserEntity != null){
+				%>
+				<span>
+		    			<%=UserEntity.getUserName() %>已登录
+				</span>
+				<!----<a href="#">登录</a>
+				<a href="#">注册</a>---->
+		</div>
+	</div>
+	</div>
+	<!---头像下拉列表--->
+	<div id="user_underlist" onmouseover="show()" onmouseout="recover()" >
+		<ul>
+			<li>
+				<a href="us-index.jsp">个人中心
+					<span class="fa fa-envelope"></span>
+				</a>
+			</li>
+			<li>
+				<a href="user_de.jsp">个人资料
+					<span class="fa fa-user"></span>
+				</a>
+			</li>
+			<li>
+				<a href="DeadUser">退出登录
+					<span class="fa fa-sign-out"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<%} else{%>
+						<a href = sign.jsp> 请先登录</a>
+						</div>
+						</div>
+						</div>
+					<% } %>
+	<%String bookid=request.getParameter("book_id");
+	
+	ArrayList<BookEntity> list = (ArrayList<BookEntity>)session.getAttribute("book");
+	if(list!=null&&bookid !=""&&bookid !=null)
+	{
+		for(BookEntity i: list)
+			if(bookid.equals(i.getB_isbn()))
+			{
+	%>
 		<div class="lxy_nav1">
 				<div >
 					<span><a>图书</a></span>
 					<span>></span>
 					<span><a>小说</a></span>
 					<span>></span>
-					<span><a>月亮与六便士</a></span>
+					<span><a><%=i.getB_name() %></a></span>
 				</div>
 		</div>
 		<!--内容主体-->
 		<div class="rb_main">
 			<!--内容主体（左）-->
 			<div class="rb_main_left">
-				<%
-			    	ArrayList<BookEntity> list = (ArrayList<BookEntity>)session.getAttribute("book");
-					if(list!=null)
-					{
-						for(BookEntity i: list)
-						{
-							if("月亮与六便士".equals(i.getB_name()))
-							{
-								
-							
-				%>
 				<!--基本信息-->
 				<div class="b_data">
 					<div class="b_cover">	</div>
@@ -84,11 +120,21 @@
 						<span>提供方：<a><%=i.getB_publish() %></a></span></br>
 						<span>字数:约134,000字</span></br>
 						<span>ISBN:<a><%=i.getB_isbn() %></a></span>
-						<div class="bookloving">
-							<span class="fa fa-heart"></span>
-							<span>收藏</span>
-					
-					</div>
+						<%if(UserEntity!=null&&bookid!=null){
+							session.setAttribute("favid",bookid);
+							
+							session.setAttribute("usid", UserEntity.getUseId());
+
+						%>
+						<a href = "javascript:void(0)" onclick="window.location='favoriteServlet?type=book'" style="text-decoration:none;">
+							<div class="bookloving">
+								<span class="fa fa-heart"></span>
+								
+								<span >收藏</span>
+							
+							</div>
+						</a>
+					<%} %>
 				</div>
 				<!--具体介绍-->
 				<div class="book_dicription">
@@ -100,11 +146,7 @@
 						<h3>作家简介</h3>
 						<%=i.getB_auabstract() %>
 					</div>
-					<%
-								}
-							}
-						}
-					%>
+					
 					<div class="b_commend">
 						<h3>喜欢这本书的人也喜欢</h3>
 						<div class="commend_list">
@@ -141,7 +183,7 @@
 				<div class="b_publish">
 					<h4>出版方</h4>
 					<div class="b_p_cover"></div>
-					<h4 style="margin-top: 25px;padding-left: 60px;margin-bottom: 36px;;">浙江文艺出版社</h4>
+					<h4 style="margin-top: 25px;padding-left: 60px;margin-bottom: 36px;;"><%=i.getB_publish() %></h4>
 					<p>浙江文艺出版社成立于1983年，是全国重要的文学出版重镇之一。浙江文艺一直以出版高品位、高格调、高档次、高质量的中外文学名著、人文社科著作为特色，近年来也多次成功推出引起全国轰动的重量级畅销书。</p>
 					<p style="margin-top: 24px;">全部作品(<a>337</a>)</p>
 					<p style="line-height: 30px;">女观众</p>
@@ -166,7 +208,7 @@
 							<a>4421</a>
 						</li>
 						<li>
-							<span>毛姆</span>
+							<span><%=i.getB_author() %></span>
 							<a>60</a>
 						</li>
 						<li>
@@ -181,6 +223,10 @@
 				</div>
 			</div>
 		</div>
+		<%
+								}
+							}
+					%>
 		<!--页脚-->
 			<div class="pick" style="background-color: #e5eaf1 !important"></div>
 				<div class="user_footer">
@@ -217,5 +263,19 @@
 					</div>
 				</div>
 			</div>
+			<script>
+			
+			function loadWindow(){
+				var msg= <%=request.getParameter("favmsg")%>;
+				switch(msg){
+				case 1:alert("恭喜你，收藏成功!!!");break;
+				case 2:alert("不好意思,收藏失败鸟!!!");break;
+				}
+			}
+			setTimeout(function(){loadWindow();},100);
+				//if(checkError !="null"){
+				//	alert(checkError);
+				//}
+			</script>
 	</body>
 </html>

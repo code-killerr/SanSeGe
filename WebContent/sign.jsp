@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+   <%@page import="com.sansege.enuity.UserEntity"%>
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +9,7 @@
 		<title>三色格_Login</title>
 		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="us-css/style.css">
+		<link rel="stylesheet" href="us-css/user_style2.css" />
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 		<link href="us-css/css.css" rel="stylesheet">
 		<link rel='stylesheet prefetch' href="us-css/icon.css">
@@ -15,38 +17,77 @@
 		
 
 		<body>
-			<div class="uesr_header">
-				<div class="user_header_left">
-					<img src="us-img/logo.png" />
-					<a href="#">三色格</a>
-					<div class="user_header_mid">
-						<ul class="user_nav">
-							<li>
-								<a href="#">首页</a>
-							</li>
-							<li>
-								<a href="#">音乐</a>
-							</li>
-							<li>
-								<a href="#">电影</a>
-							</li> 
-							<li>
-								<a href="#">书籍</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="user_header_right">
-					<div class="user_research">
-						<input type="text" placeholder="搜索更多你想要的" />
-						<button class="fa fa-search"></button>
-					</div>
-					<div class="user_name">
-						<a href="#">登录</a>
-						<a href="#">注册</a>
-					</div>
-				</div>
+		<div class="uesr_header">
+			<div class="user_body">
+				<p>选择今天的天气：</p>
+				<span class="fa fa-sun-o" id="weatherchoose1" onclick="getans1()" on="loseans1()"></span>
+				<span class="fa fa-cloud" id="weatherchoose2" onclick="getans2()"></span>
+				<span class="fa fa-snowflake-o" id="weatherchoose3" onclick="getans3()"></span>
 			</div>
+		<div class="user_header_left">
+			<img src="us-img/logo.png"/>
+			<a href="#">三色格</a>
+			<div class="user_header_mid">
+				<ul class="user_nav">
+					<li>
+						<a href="index.jsp">首页</a>
+					</li>
+					<li>
+						<a href="amusic.jsp">音乐</a>
+					</li>
+					<li>
+						<a href="mfirst.jsp">电影</a>
+					</li>
+					<li>
+						<a href="noval.jsp">书籍</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="user_header_right">
+			<div class="user_research">
+				<input type="text" placeholder="搜索更多你想要的"/>
+				<button class="fa fa-search"></button>
+			</div>
+			<div class="user_name" onmouseover="show()" onmouseout="recover()">
+				<%
+					UserEntity UserEntity = (UserEntity)session.getAttribute("userDate");
+				    if(UserEntity != null){
+				%>
+				<span>
+		    			<%=UserEntity.getUserName() %>已登录
+				</span>
+				<!----<a href="#">登录</a>
+				<a href="#">注册</a>---->
+		</div>
+	</div>
+	</div>
+	<!---头像下拉列表--->
+	<div id="user_underlist" onmouseover="show()" onmouseout="recover()" >
+		<ul>
+			<li>
+				<a href="us-index.jsp">个人中心
+					<span class="fa fa-envelope"></span>
+				</a>
+			</li>
+			<li>
+				<a href="user_de.jsp">个人资料
+					<span class="fa fa-user"></span>
+				</a>
+			</li>
+			<li>
+				<a href="DeadUser">退出登录
+					<span class="fa fa-sign-out"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<%} else{%>
+						<a href = sign.jsp> 请先登录</a>
+						</div>
+						</div>
+						</div>
+					<% } %>
 			<div class="cotn_principal">
 				<div class="cont_centrar">
 					<div class="cont_login">

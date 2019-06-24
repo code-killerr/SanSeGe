@@ -10,7 +10,7 @@
 		<title>三色格_书籍盒子</title>
 		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="no-css/style_zxy_rank.css" />
-		<link rel="stylesheet" href="us-css/user_style.css" />
+		<link rel="stylesheet" href="us-css/user_style2.css" />
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
 		<script type="text/javascript" src="no-js/js_zxy_rank.js"></script>
 		<script type="text/javascript" src="us-js/user_style.js"></script>
@@ -30,16 +30,16 @@
 			<div class="user_header_mid">
 				<ul class="user_nav">
 					<li>
-						<a href="#">首页</a>
+						<a href="index.jsp">首页</a>
 					</li>
 					<li>
-						<a href="#">音乐</a>
+						<a href="amusic.jsp">音乐</a>
 					</li>
 					<li>
-						<a href="FilmServlet">电影</a>
+						<a href="mfirst.jsp">电影</a>
 					</li>
 					<li>
-						<a href="BookServlet">书籍</a>
+						<a href="noval.jsp">书籍</a>
 					</li>
 				</ul>
 			</div>
@@ -50,27 +50,17 @@
 				<button class="fa fa-search"></button>
 			</div>
 			<div class="user_name" onmouseover="show()" onmouseout="recover()">
-			<%
-			UserEntity userEntity = (UserEntity)session.getAttribute("userDate");
-			    if(userEntity != null){
-			%>
+				<%
+					UserEntity UserEntity = (UserEntity)session.getAttribute("userDate");
+				    if(UserEntity != null){
+				%>
 				<span>
-		    			<%=userEntity.getUserName()%>
+		    			<%=UserEntity.getUserName() %>已登录
 				</span>
-				
-				
+				<!----<a href="#">登录</a>
+				<a href="#">注册</a>---->
 		</div>
-		<%
-					}
-			    else{
-	 %>
-	 <a href="#">登录</a>
-	 <a href="#">注册</a>
-	 <%
-			}
-	 %>
 	</div>
-	
 	</div>
 	<!---头像下拉列表--->
 	<div id="user_underlist" onmouseover="show()" onmouseout="recover()" >
@@ -92,6 +82,12 @@
 			</li>
 		</ul>
 	</div>
+	<%} else{%>
+						<a href = sign.jsp> 请先登录</a>
+						</div>
+						</div>
+						</div>
+					<% } %>
 	
 		<!--整体的页面-->
 		<div class="zxy_page">
@@ -158,7 +154,7 @@
 					    	%>
 					    		<tr>
 					    			<th width="6px" style="color: hotpink;"><%=n %>.</th>
-					    			<th width="130px"><a href="r_book.jsp" class="zxy_rank"><%=i.getB_name() %></a></th>
+					    			<th width="130px"><a href="r_book.jsp?book_id=<%=i.getB_isbn() %>" class="zxy_rank"><%=i.getB_name() %></a></th>
 					    			<th width="120px"><a href="#" class="zxy_rank"><%=i.getB_author() %></a></th>
 					    			<th width="5px"><a href="#" class="zxy_rank"><%=i.getB_score() %></th>
 					    		</tr>

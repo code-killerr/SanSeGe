@@ -142,6 +142,7 @@ public class LoginSqlControl {
 				System.out.print("非select语句不予处理");
 			return null;
 		}
+		//admin用户后台查询
 		public List<UserEntity> Select() {
 			List<UserEntity> list = new ArrayList<UserEntity>();
 			String sql = "SELECT * FROM userdata;";
@@ -164,7 +165,7 @@ public class LoginSqlControl {
 			}
 			return list;
 		}
-		
+		//用户注销
 		public int deleteUser(int userid) {
 			int i = 0;
 			String sql = "DELETE FROM userdata WHERE userid = ?";
@@ -176,7 +177,7 @@ public class LoginSqlControl {
 			}
 			return i;
 		}
-		
+		//显示收藏(音乐)
 		public List<MusicEntity> User_Favorite_Music(int userId) throws SQLException {
 			String sql = "Select m_no from user_favorite_music where userid = ?";
 			Object[] objects = {userId};
@@ -203,6 +204,7 @@ public class LoginSqlControl {
 			return music;
 			
 		}
+		//显示收藏(电影)
 		public List<FilmEntity> User_Favorite_Film(int userId) throws SQLException{
 			String sql = "Select f_id from user_favorite_film where userid = ?";
 			Object[] objects = {userId};
@@ -233,6 +235,7 @@ public class LoginSqlControl {
 			}
 			return film;
 		}
+		//显示收藏(书籍)
 		public List<BookEntity> User_Favorite_Book(int userId) throws SQLException{
 			String sql = "Select b_isbn from user_favorite_book where userid = ?";
 			Object[] objects = {userId};
@@ -258,7 +261,7 @@ public class LoginSqlControl {
 			}
 			return bookl;
 		}
-		
+		//书籍显示
 		public ArrayList<BookEntity> selectAllBook(){
 			
 			ArrayList<BookEntity> list =new ArrayList<BookEntity>();
@@ -290,6 +293,8 @@ public class LoginSqlControl {
 			return list;
 			
 		}
+		
+		//电影显示
 		public ArrayList<FilmEntity> queryfilm(){
 			ArrayList<FilmEntity> list=new ArrayList<FilmEntity>();
 			ResultSet rs=null;
@@ -311,6 +316,25 @@ public class LoginSqlControl {
 				e.printStackTrace();
 			}
 			return list;
+		}
+		//添加收藏
+		public int addBookFav(String favid,int userId) throws SQLException {
+			String sql="INSERT INTO user_favorite_book (userid,b_isbn)VALUES (?,?) ";
+			Object[] values= {userId,favid};
+			int i = noSelectSql(sql,values);
+			return i;
+		}
+		public int addMusicFav(int favid,int userId) throws SQLException {
+			String sql="INSERT INTO user_favorite_music (userid,b_isbn)VALUES (?,?) ";
+			Object[] values= {userId,favid};
+			int i = noSelectSql(sql,values);
+			return i;
+		}
+		public int addFilmFav(int favid,int userId) throws SQLException {
+			String sql="INSERT INTO user_favorite_film (userid,b_isbn)VALUES (?,?) ";
+			Object[] values= {userId,favid};
+			int i = noSelectSql(sql,values);
+			return i;
 		}
 
 }

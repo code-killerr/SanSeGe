@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>三色格_个人中心</title>
 <link rel="shortcut icon" href="us-img/ico.png" />
+<link rel="stylesheet" href="us-css/user_style2.css" />
 <link rel="stylesheet" href="us-css/user_style.css" />
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 <script src="us-js/jquery.min.js"></script>
@@ -202,8 +203,10 @@
 			 %>
 			 <span>
 		    			<a href = "sign.jsp">请先登录</a>
-				</span>
-				
+			</span>
+			</div>
+			</div>
+			</div>
 			<%} %>
 
 <script>
