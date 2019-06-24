@@ -7,7 +7,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>三色格_书籍盒子</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 		<link rel="stylesheet" href="no-css/style_zxy_rank.css" />
 		<link rel="stylesheet" href="us-css/user_style.css" />
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
