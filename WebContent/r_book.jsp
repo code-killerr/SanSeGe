@@ -9,13 +9,14 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="no-css/readstyle.css" />
+		<link rel="stylesheet" href="us-css/user_style.css" />
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
 	</head>
 	<body>
 		<!--导航栏-->
 		<div class="lxy_header">
 					<div class="user_header_left">
-					<img src="r_images/logo.png"/>
+					<img src="no-img/logo.png"/>
 					<a href="#">三色格</a>
 					<div class="user_header_mid">
 						<ul class="user_nav">
@@ -72,7 +73,7 @@
 				%>
 				<!--基本信息-->
 				<div class="b_data">
-					<div class="b_cover">
+					<div class="b_cover">	</div>
 						<h2><%=i.getB_name() %>（作家榜精典）</h2>
 						<p>大星文化出品，2019年三色格图书桂冠</p>
 						<span>作者：<a>[英]<%=i.getB_author() %></a></span></br>
@@ -85,7 +86,7 @@
 						<div class="bookloving">
 							<span class="fa fa-heart"></span>
 							<span>收藏</span>
-						</div>
+					
 					</div>
 				</div>
 				<!--具体介绍-->
@@ -106,40 +107,33 @@
 					<div class="b_commend">
 						<h3>喜欢这本书的人也喜欢</h3>
 						<div class="commend_list">
-							<img height="135" width="90" src="r_images/xwz.jpg" />
+							<img height="135" width="90" src="no-img/xwz.jpg" />
 							<h5>小王子</h5>
 							<p>〔法〕安托万·德·圣-埃克苏佩里</p>
 						</div>
 						<div class="commend_list">
-							<img height="135" width="90" src="r_images/1984.jpg" />
+							<img height="135" width="90" src="no-img/z1984.jpg" />
 							<h5>1984</h5>
 							<p>〔英〕 乔治·奥威尔</p>
 						</div>
 						<div class="commend_list">
-							<img height="135" width="90" src="r_images/hz.jpg" />
+							<img height="135" width="90" src="no-img/hz.jpg" />
 							<h5>活着</h5>
 							<p>余华</p>
 						</div>
 						<div class="commend_list">
-							<img height="135" width="90" src="r_images/ssyzzgn.jpg" />
+							<img height="135" width="90" src="no-img/ssyzzgn.jpg" />
 							<h5>杀死一只知更鸟</h5>
 							<p>〔美〕哈珀·李</p>
 						</div>
 						<div class="commend_list" style="margin-right: 0px!important;">
-							<img height="135" width="90" src="r_images/rxdjs.jpg" />
+							<img height="135" width="90" src="no-img/rxdjs.jpg" />
 							<h5>人性的枷锁</h5>
 							<p>〔英〕威廉·萨默塞特·毛姆</p>
 						</div>
 					</div>
 				</div>
-				<h3>作品目录</h3>
-				<%
-					for(int i = 0;i<58;i++){
-				%>
-				<p>第<%=i%>章</p>
-				<%
-					}
-				%>
+
 			</div>	
 			<!--内容主体（右）-->
 			<div class="rb_main_right">
@@ -186,5 +180,41 @@
 				</div>
 			</div>
 		</div>
+		<!--页脚-->
+			<div class="pick" style="background-color: #e5eaf1 !important"></div>
+				<div class="user_footer">
+					<div class="user_footer1">
+						<p>联系我们</p>
+						<br />
+						<p>QQ:154844812</p>
+						<br />
+						<p>TEL:0812-5422567</p>
+						<br />
+						<p>感谢您的关心</p>
+					</div>
+					<div class="user_footer1">
+						<p>常见问题</p>
+						<br />
+						<p>登录不了</p>
+						<br />
+						<p>推荐出错</p>
+						<br />
+						<p>更新不及时</p>
+					</div>
+					<div class="user_footer1">
+						<p>加入社区</p>
+						<br />
+						<p>《三色格》社区</p>
+						<br />
+						<p>百度推荐</p>
+						<br />
+						<p>广告招商</p>
+					</div>
+					<div class="user_footer1">
+						<img src="us-img/qr.png" width="100" height="100" />
+						<p>三色格微信公总号</p>
+					</div>
+				</div>
+			</div>
 	</body>
 </html>

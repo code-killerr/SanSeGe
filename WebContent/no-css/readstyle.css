@@ -2,14 +2,14 @@
 	margin: 0;
 	padding: 0;
 }
-/*头部*/
+/*澶撮儴*/
 .lxy_header{
 	width: 100%;
 	height: 70px;
 	background-color: dimgray;
 }
 
-/**页眉左半部*/
+/**椤电湁宸﹀崐閮�*/
 .user_header_left{
 	width: 200px;
 	height: 50px;
@@ -26,7 +26,7 @@
 .user_header_left a:hover{
 	color: #EEEEEE;
 }
-/**中间*/
+/**涓棿*/
 .user_header_mid{
 	width: 500px;
 	height: 50px;
@@ -50,14 +50,14 @@
 .user_header_mid .user_nav li:hover{
 	background-color: gray;
 }
-/**页眉右半部*/
+/**椤电湁鍙冲崐閮�*/
 .user_header_right{
 	width: 500px;
 	height: 70px;
 	float: right;
 	margin-right: 8px;
 }
-/**搜索框*/
+/**鎼滅储妗�*/
 .user_header_right .user_research{
 	width: 220px;
 	height: 30px;
@@ -85,7 +85,7 @@
 	opacity: 0.6;
 	cursor: pointer;
 }
-/**用户登录/注册**/
+/**鐢ㄦ埛鐧诲綍/娉ㄥ唽**/
 .user_header_right .user_name{
 	width: 100px;
 	height: 70px;
@@ -148,13 +148,13 @@
 	
 }
 
-/*轮播图*/
+/*杞挱鍥�*/
 .lxy_p{
 	width: 100%;
 	height: 400px;
 	background-color: antiquewhite;
 }
-/*主体*/
+/*涓讳綋*/
 .lxy_main{
 	width: 100%;
 	height: 1600px;
@@ -167,7 +167,7 @@
 	margin: 0 auto;
 
 }
-/*书单推荐*/
+/*涔﹀崟鎺ㄨ崘*/
 .lxy_book{
 	width: 75%;
 	height: 100%;
@@ -210,7 +210,7 @@
 	text-align: center;
     line-height: 40px;
 }
-/*人气作者*/
+/*浜烘皵浣滆��*/
 .lxy_wr{
 	width: 25%;
 	height: 1600px;
@@ -263,7 +263,7 @@
 }
 
 
-/*页尾*/
+/*椤靛熬*/
 .lxy_footer{
 	width: 100%;
 	height: 300px;
@@ -281,7 +281,7 @@
 	margin: 50px 67px;
 	font-size: 14px;
 	color: white;
-	font-family: "微软雅黑";
+	font-family: "寰蒋闆呴粦";
 	text-align: center;
 	line-height: 25px;
 }
@@ -292,10 +292,10 @@
 .user_footer1 img{
 	margin-top: 20px;
 }
-/*r_book页面*/
+/*r_book椤甸潰*/
 .rb_main{
 	width: 100%;
-	height: 1200px;
+	height: 1280px;
 	background-color: #e5eaf1;
 }
 .rb_main_left{
@@ -323,7 +323,7 @@
 	height: 209px;
 	margin-right: 20px;
 	float: left;
-	background-image:url(../r_images/yl.jpg) ;
+	background-image:url(../no-img/yl.jpg) ;
 }
 .b_data p{
 	margin-bottom: 15px;
@@ -376,7 +376,7 @@
 	width: 48px;
 	height: 48px;
 	margin-top: 15px;
-	background-image: url(../r_images/cbs.jpg);
+	background-image: url(../no-img/cbs.jpg);
 	-webkit-background-size: 48px;
 	float: left;
 }

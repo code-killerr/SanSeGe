@@ -437,7 +437,7 @@
 				</div>
 				<!--全部音乐-->
 				<div class="all">
-					<a href="#">全部音乐</a>
+					<a href="amusic2.jsp">全部音乐</a>
 				</div>
 			</div>
 		</div>
