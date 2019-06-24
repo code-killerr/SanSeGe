@@ -3,7 +3,7 @@ function zxy_clo(){
 }
 function zxy_aChange()
 {
-	document.getElementById("zxy_ad").style.color="hotpink";
+	document.getElementById("zxy_rank").style.color="hotpink";
 }
 
 //function change(){

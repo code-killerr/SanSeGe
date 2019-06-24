@@ -107,30 +107,14 @@
 			</div>
 			<p class="more">查看更多>></p>
 			<div class="user_musicloving">
+			<% int id = userEntity.getUseId();
+				
+			%>
 				<div class="user_musicloving_1">
 					<img src="us-img/eason.jpeg" width="70" height="70"/>
 					<p>浮夸——陈奕迅</p>
 				</div>
-				<div class="user_musicloving_2">
-					<img src="us-img/yilei.jpg" width="70" height="70"/>
-					<p>异类——华晨宇</p>
-				</div>
-				<div class="user_musicloving_3">
-					<img src="us-img/red.jpg" width="70" height="70"/>
-					<p>Red——taylor swift</p>
-				</div>
-				<div class="user_musicloving_1">
-					<img src="us-img/wct.jpg" width="70" height="70"/>
-					<p>往春天——金志文</p>
-				</div>
-				<div class="user_musicloving_2">
-					<img src="us-img/missu.jpg" width="70" height="70"/>
-					<p>MISS U——尤长靖</p>
-				</div>
-				<div class="user_musicloving_3">
-					<img src="us-img/bs.jpg" width="70" height="70"/>
-					<p>彼时——张碧晨</p>
-				</div>
+				
 			</div>
 		</div>
 		<!---电影--->

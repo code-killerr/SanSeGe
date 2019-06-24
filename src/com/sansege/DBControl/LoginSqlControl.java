@@ -177,6 +177,27 @@ public class LoginSqlControl {
 			return i;
 		}
 		
+		public ResultSet user_favorite(int userId,String tableName) throws SQLException {
+			String sql = "Select * from ? where userid = ?";
+			Object[] objects = {userId,tableName};
+			ResultSet rs = help.search(sql, objects);
+			if("user_favorite_music".equals(tableName)) {
+				List<UserEntity> list = new ArrayList<UserEntity>();
+				while(rs.next()) {
+					UserEntity entity = new UserEntity();
+					entity.setUseId(rs.getInt("userid"));
+					entity.setUserName(rs.getString("userName"));
+					entity.setUserPassword(rs.getString("userPassword"));
+					entity.setUserHeadpic(rs.getString("userHeadpic"));
+					entity.setUserIntroduce(rs.getString("userIntroduce"));
+					entity.setUserPhone(rs.getString("userPhone"));
+					entity.setUserEmail(rs.getString("userEmail"));
+					list.add(entity);
+				}
+			}
+			return null;
+		}
+		
 		public ArrayList<BookEntity> selectAllBook(){
 			
 			ArrayList<BookEntity> list =new ArrayList<BookEntity>();
