@@ -727,6 +727,9 @@
 				</div>
 				<div class="bmp3">
 					<audio  id="mu1" src="am2-audio/7years.mp3" controls="controls"></audio>
+						<div class="shoucang">
+							<button>收藏</button>
+						</div>
 				</div>
 			</div>
 			
@@ -736,6 +739,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu2" src="am2-audio/DJX.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -745,6 +751,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu3" src="am2-audio/IAMY.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -754,6 +763,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu4" src="am2-audio/Monster.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -763,6 +775,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu5" src="am2-audio/JZYY.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -773,6 +788,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu6" src="am2-audio/RAIN.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -782,6 +800,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu7" src="am2-audio/SWXLYTY.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -791,6 +812,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu8" src="am2-audio/NFGN.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -800,6 +824,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu9" src="am2-audio/YZHHAJ.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 			
@@ -809,6 +836,9 @@
 				</div>
 				<div class="bmp3">
 					<audio id="mu10" src="am2-audio/CHD.mp3" controls="controls"></audio>
+					<div class="shoucang">
+							<button>收藏</button>
+					</div>
 				</div>
 			</div>
 	</body>

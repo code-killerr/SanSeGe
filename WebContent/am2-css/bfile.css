@@ -342,7 +342,6 @@
 }
 .bfourbox1{
 	width: 277px;
-	min-width: 277px;
 	height: 190px;
 	background-image: url(../am2-img/3.jpg);
 	background-repeat: no-repeat;
@@ -353,7 +352,6 @@
 }
 .bfourbox2{
 	width: 277px;
-	min-width: 277px;
 	height: 190px;
 	background-image: url(../am2-img/d.jpg);
 	background-repeat: no-repeat;
@@ -364,7 +362,6 @@
 }
 .bfourbox3{
 	width: 277px;
-	min-width: 277px;
 	height: 190px;
 	background-image: url(../am2-img/3.jpg);
 	background-repeat: no-repeat;
@@ -375,7 +372,6 @@
 }
 .bfourbox4{
 	width: 277px;
-	min-width: 277px;
 	height: 190px;
 	background-image: url(../am2-img/55.jpg);
 	background-repeat: no-repeat;
@@ -792,8 +788,18 @@
 	height: 100%;
 	float: right;
 }
+/*收藏按钮*/
+.shoucang{
+	width: 5%;
+	float: right;
+	line-height: 70px;
+}
+button{
+	border: 10px solid #E5E5E6;
+    border-radius: 20px;
+}
 audio {
-    width: 95%;
+    width: 90%;
     height: 54px;
     margin-top: 8px;
     margin-left: 3%;

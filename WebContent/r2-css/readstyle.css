@@ -1,0 +1,136 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/*头部*/
+.lxy_header{
+	width: 100%;
+	height: 70px;
+	background-color: darkgrey;
+}
+.lxy_nav{
+	width: 100%;
+	height: 35px;
+	background-color: #9ebde3;
+}
+/*轮播图*/
+.lxy_p{
+	width: 100%;
+	height: 400px;
+	background-color: antiquewhite;
+}
+/*主体*/
+.lxy_main{
+	width: 100%;
+	height: 1600px;
+	background-color: #9ebde3;
+}
+.lxy_main1{
+	width: 80%;
+	height:100%;
+	background-color: white;
+	margin: 0 auto;
+
+}
+/*书单推荐*/
+.lxy_book{
+	width: 75%;
+	height: 100%;
+	float: left;
+	background-color: aliceblue;
+}
+.lxy_book_title{
+	width: 100%;
+	height: 50px;
+	margin-top: 60px;
+	margin-left: 20px;
+}
+.lxy_book_title_1{
+	width: 80%;
+	height: 55px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	line-height: 50px;
+	border-bottom: 1px solid darkgray;
+}
+.lxy_book_title a{
+	color: #333333;
+	font-size: 30px;
+	font-weight: bold;
+}
+.lxy_booklist{
+	width: 100%;
+	height: 40px;
+    height: 40px;
+    position: relative;
+    left: 17px;
+	margin-bottom: 10px;
+}
+.lxy_booklist1{
+	width: 150px;
+	margin-right: 50px;
+	height: 40px;
+	float: left;
+	color: #666666;
+	text-align: center;
+    line-height: 40px;
+}
+/*人气作者*/
+.lxy_wr{
+	width: 25%;
+	height: 1600px;
+	float: left;
+	background-color: aliceblue;
+}
+.tiles {
+
+  width: 100%;
+  height:100%;
+  padding-top: 60px;
+}
+.lxy_box{
+	width: 160px;
+	height: 160px;
+	float: left;
+	margin: 0px 20px 20px 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.lxy_box a{
+	line-height: 160px;
+	color: #FFFFFF;
+	font-size: 20px;	
+}
+.lxy_bg1{
+	background-color: #b3c9e1;
+}
+.lxy_bg2{
+	background-color: #C1E2B3;
+}
+.lxy_bg3{
+	background-color: #CCCCCC;
+}
+.lxy_bg4{
+	background-color: #EBCCD1;
+}
+.lxy_bg5{
+	background-color: #b6d3e2;
+	}
+.lxy_bg6{
+	background-color: #edd2a4;
+}
+.lxy_bg7{
+	background-color: #c1dfd3;
+}
+.lxy_bg8{
+	background-color: #bfdae5;
+}
+
+
+/*页尾*/
+.lxy_footer{
+	width: 100%;
+	height: 300px;
+	background-color: darkgrey;
+}
