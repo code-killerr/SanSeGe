@@ -69,6 +69,7 @@
 }
 /*鎺掕鍒嗙被*/
 .zxy_sortrank{
+	min-width:1300px;
 	width: 80%;
 	height: 140px;
 	margin:25px 10% 0px 10%;

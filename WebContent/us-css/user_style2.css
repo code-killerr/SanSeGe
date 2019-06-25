@@ -1,4 +1,8 @@
-
+*{
+	margin:0 auto;
+	padding:0;
+	
+}
 .basic-grey {
 margin-left:auto;
 margin-right:auto;
@@ -333,14 +337,14 @@ body {
 	height: 120px;
 	background-color: white;
 	position: relative;
-	right: -50px;
+	right: 145px;
 	top: 32px;
 }
 #userde{
 	width: 350px;
 	height: 250px;
 	position: relative;
-	left: 225px;
+	left: 100px;
 	top: -90px;
 }
 

@@ -110,7 +110,7 @@
 			<div class="rb_main_left">
 				<!--基本信息-->
 				<div class="b_data">
-					<div class="b_cover">	</div>
+					<div class="b_cover" style = "background-image:url(<%=i.getB_cover() %>)">	</div>
 						<h2><%=i.getB_name() %>（作家榜精典）</h2>
 						<p>大星文化出品，2019年三色格图书桂冠</p>
 						<span>作者：<a>[英]<%=i.getB_author() %></a></span></br>

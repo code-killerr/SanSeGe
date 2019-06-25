@@ -13,6 +13,7 @@
 <link rel="shortcut icon" href="us-img/ico.png" />
 <link rel="stylesheet" href="us-css/user_style2.css" />
 <link rel="stylesheet" href="us-css/user_style.css" />
+<link rel="stylesheet" href="us-css/style.css" />
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
 <script src="us-js/jquery.min.js"></script>
 <script src="us-js/LiftEffect.js"></script>
