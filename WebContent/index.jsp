@@ -360,7 +360,7 @@
 							<span class="book6"></span>
 							<span class="book7"></span>
 							<span class="book8"></span>
-							<a onclick="window.location='BookServlet'">
+							<a onclick="window.location='book-index.jsp'">
 										<div class="filmbtn"style="bottom: 30%;">
 											<p>打开格子看本书</p>
 										</div>

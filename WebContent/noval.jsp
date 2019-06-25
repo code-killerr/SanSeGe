@@ -95,8 +95,8 @@
 			<div class="zxy_readnav">
 				<div>
 					<ul>
-						<li style="	width: 80px;height: 35px;">书单</li>
-						<li style="	width: 80px;height: 35px;">排行榜</li>
+						<li style="	width: 80px;height: 35px;"><a href="book-index.jsp" style="text-decoration: none;">书单</a></li>
+						<li style="	width: 80px;height: 35px;"><a href="BookServlet" style="text-decoration: none;">排行榜</a></li>
 					</ul>
 				</div>
 			</div>
