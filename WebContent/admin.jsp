@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>三色格_后台管理</title>
+		<link rel="shortcut icon" href="us-img/ico.png" />
 </head>
 <body>
           <%

@@ -43,7 +43,7 @@
 						<a href="mfirst.jsp">电影</a>
 					</li>
 					<li>
-						<a href="noval.jsp">书籍</a>
+						<a href="book-index.jsp">书籍</a>
 					</li>
 				</ul>
 			</div>
@@ -155,9 +155,9 @@
 			if(book != null)
 				for(BookEntity i : book){
 			%>
-				<div>
+				<div><a href="r_book.jsp?book_id=<%=i.getB_isbn() %>">
 					<img src="<%=i.getB_cover() %>" width="70" height="70"/>
-					<p><%=i.getB_name() %></p>
+					<p><%=i.getB_name() %></p></a>
 				</div>
 				<%} %>
 			</div>

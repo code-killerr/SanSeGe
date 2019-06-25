@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="r2-css/style.css" />
 		<link rel="stylesheet" href="r2-css/swiper.css" />
 		<link rel="stylesheet" href="us-css/user_style2.css" />
+		<link rel="stylesheet" href="no-css/style_zxy_rank.css" />
 		<link rel="stylesheet" type="text/css" href="r2-css/flip.css">
 		<script type="text/javascript" src="r2-js/jquery-1.11.2.min.js" ></script>
 		<script type="text/javascript" src="r2-js/swiper.js"></script>
@@ -38,7 +39,7 @@
 						<a href="mfirst.jsp">电影</a>
 					</li>
 					<li>
-						<a href="noval.jsp">书籍</a>
+						<a href="book-index.jsp">书籍</a>
 					</li>
 				</ul>
 			</div>
@@ -114,8 +115,8 @@
 			<div class="zxy_readnav">
 				<div>
 					<ul>
-						<li style="	width: 80px;height: 35px;">书单</li>
-						<li style="	width: 80px;height: 35px;">排行榜</li>
+						<li style="	width: 80px;height: 35px;"><a href="book-index.jsp" style="text-decoration: none;">书单</a></li>
+						<li style="	width: 80px;height: 35px;"><a href="BookServlet" style="text-decoration: none;">排行榜</a></li>
 					</ul>
 				</div>
 			</div>

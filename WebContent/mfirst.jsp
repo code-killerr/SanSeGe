@@ -40,7 +40,7 @@
 						<a href="mfirst.jsp">电影</a>
 					</li>
 					<li>
-						<a href="noval.jsp">书籍</a>
+						<a href="book-index.jsp">书籍</a>
 					</li>
 				</ul>
 			</div>
@@ -206,6 +206,7 @@
 					    		ArrayList<FilmEntity> list = (ArrayList<FilmEntity>)session.getAttribute("film");
 					    	%>
 							<%
+								int j=0;
 								if(list!=null)
 				    			{
 				    				for(FilmEntity i: list){
@@ -229,6 +230,9 @@
 								</div>
 							
 							<%
+								if(j>=3){
+									break;
+								}
 				    				}
 				    			}
 							%>
