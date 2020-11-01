@@ -5,7 +5,7 @@ public class DBHelper {
 	private Connection conn;
 	DBHelper(String DBname,String userName,String userSec) throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");//×¢²áÇý¶¯
-		conn = DriverManager.getConnection("jdbc:mysql://47.94.101.238:3306/"+DBname,userName,userSec);
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+DBname,userName,userSec);
 	}
 	
 	private PreparedStatement execute(String sql,Object[] values) throws SQLException {

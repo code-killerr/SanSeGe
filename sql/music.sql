@@ -1,0 +1,6 @@
+INSERT INTO music VALUES (1,'大碗宽面','吴亦凡','吴亦凡','吴亦凡','大碗宽面','null')   
+INSERT INTO music VALUES (2,'来自天堂的魔鬼','邓紫棋','邓紫棋','邓紫棋','新的心跳','null')  
+INSERT INTO music VALUES (3,'易燃易爆炸','陈粒','尚梦迪/骈然','陈粒','如也','null')  
+INSERT INTO music VALUES (4,'你还要我怎样','薛之谦','薛之谦','薛之谦','意外','null')  
+INSERT INTO music VALUES (5,'雨蝶','李翊君','许常德','张宇','情爱怨女','null')  
+INSERT INTO music VALUES (6,'小小的太阳','张宇','十一郎','张宇','月亮 太阳','null')

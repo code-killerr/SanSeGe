@@ -8,7 +8,7 @@ import com.sansege.enuity.*;
 public class LoginSqlControl {
 	DBHelper help;//数据库连接
 	public LoginSqlControl() throws Exception{
-		help = new DBHelper("sansege","root","root");
+		help = new DBHelper("sansege","root","!&xF&yff3Q42usK*");
 	}
 	//注册用户信息
 	public int save(UserEntity userEnity) {
@@ -70,7 +70,7 @@ public class LoginSqlControl {
 					userEnity.setUserPhone(rs.getString("userphone"));
 					return userEnity;
 				}
-				else {
+				else {	
 					System.out.print("传值错误");
 					return null;
 				}
