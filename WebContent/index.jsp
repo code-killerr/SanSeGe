@@ -39,7 +39,6 @@
 			ul {
 				list-style: none;
 			}
-			
 			html,
 			body {
 				width: 100%;
@@ -88,7 +87,7 @@
 			
 			.section-wrap .section .title p {
 				padding: 0 4%;
-				opacity: 0
+				opacity: 0;	
 			}
 			
 			.section-wrap .section .title.active .tit {
@@ -244,22 +243,20 @@
 					<span>三色格</span>
 					<p>城市的忙碌犹如这线条的繁复<br />烦乱的心情同样也要精心呵护</p>
 				</div>
-				<%
-					UserEntity userEntity = (UserEntity)session.getAttribute("userDate"); 
-					if(userEntity == null){
-				%>
-				<a href="sign.jsp">
-					<div class="titlebtn">
-						<p>进入彩色的世界</p>
+				<div class="titlebtn-div">
+					<%
+						UserEntity userEntity = (UserEntity)session.getAttribute("userDate"); 
+						if(userEntity == null){
+					%>
+					<div onclick=window.open("sign.jsp","_self") class="titlebtn" style="cursor:pointer">
+							<p style="cursor:pointer">进入彩色的世界</p>
 					</div>
-				</a>
-				<%}else{ %>
-					<a href="us-index.jsp">
-						<div class="titlebtn">
-							<p>进入彩色的世界</p>
+					<%}else{ %>
+						<div onclick=window.open("us-index.jsp","_self") class="titlebtn" style="cursor:pointer">
+								<p style="cursor:pointer">进入彩色的世界</p>
 						</div>
-					</a>
-				<% }%>
+					<% }%>
+				</div>
 				<section class="canvas-wrap">
 
 					<div id="canvas" class="gradient"></div>
@@ -385,26 +382,27 @@
 							<nav>
 								<ul>
 									<li>
-										<a href="#" class="" style="background-image: url(img/tel.png);width: 50px;height: 50px;background-size:cover ;"><span>Twitter</span></a>
+										<a href="#" class="" style="background-image: url(img/tel.png);width: 50px;height: 50px;background-size:cover ;"><span>保密</span></a>
 									</li>
 									<li>
-										<a href="#" class="" style="background-image: url(img/github.png);width: 50px;height: 50px;background-size:cover ;"><span>Facebook</span></a>
+										<a href="https://github.com/code-killerr" class="" style="background-image: url(img/github.png);width: 50px;height: 50px;background-size:cover ;"><span>GitHub</span></a>
 									</li>
 									<li>
-										<a href="#" class="" style="background-image: url(img/weixin.png);width: 50px;height: 50px;background-size:cover ;"><span>Dribbble</span></a>
+										<a href="#" class="" style="background-image: url(img/weixin.png);width: 50px;height: 50px;background-size:cover ;"><span>保密</span></a>
 									</li>
 									<li>
-										<a href="#" class="" style="background-image: url(img/weibo.png);width: 50px;height: 50px;background-size:cover ;"><span>Github</span></a>
+										<a href="#" class="" style="background-image: url(img/weibo.png);width: 50px;height: 50px;background-size:cover ;"><span>没有</span></a>
 									</li>
 									<li>
-										<a href="#" class="" style="background-image: url(img/email.png);width: 50px;height: 50px;background-size:cover ;"><span>Email</span></a>
+										<a href="#" class="" style="background-image: url(img/email.png);width: 50px;height: 50px;background-size:cover ;"><span>保密</span></a>
 									</li>
 								</ul>
 							</nav>
 						</header>
 
 						<footer id="footer">
-							<span class="copyright">&copy; Untitled. Design.</span>
+							<span class="copyright">CK.tu. Design.</span>
+							<span class="copyright">陕ICP备2020018429号-1	</span>
 						</footer>
 					</div>
 				</div>
