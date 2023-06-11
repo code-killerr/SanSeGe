@@ -4,12 +4,12 @@ import java.sql.*;
 public class DBHelper {
 	private Connection conn;
 	DBHelper(String DBname,String userName,String userSec) throws Exception {
-		Class.forName("com.mysql.jdbc.Driver");//×¢²áÇý¶¯
+		Class.forName("com.mysql.jdbc.Driver");//×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+DBname,userName,userSec);
 	}
 	
 	private PreparedStatement execute(String sql,Object[] values) throws SQLException {
-		PreparedStatement stat = conn.prepareStatement(sql);//ÊµÀý»¯Statment
+		PreparedStatement stat = conn.prepareStatement(sql);//Êµï¿½ï¿½ï¿½ï¿½Statment
 		for(int i =0;i<values.length;i++) {
 			stat.setObject(i+1, values[i]);
 		}

@@ -6,11 +6,11 @@ import java.util.List;
 
 import com.sansege.enuity.*;
 public class LoginSqlControl {
-	DBHelper help;//Êı¾İ¿âÁ¬½Ó
+	DBHelper help;//æ•°æ®åº“è¿æ¥
 	public LoginSqlControl() throws Exception{
-		help = new DBHelper("sansege","root","!&xF&yff3Q42usK*");
+		help = new DBHelper("sansege","sansege","!&xF&yff3Q42usK*");
 	}
-	//×¢²áÓÃ»§ĞÅÏ¢
+	//æ³¨å†Œç”¨æˆ·ä¿¡æ¯
 	public int save(UserEntity userEnity) {
 		try {
 			int i = 0;
@@ -27,7 +27,7 @@ public class LoginSqlControl {
 				i =  noSelectSql(sql,values);
 			}
 			else {
-				System.out.print("´«Öµ´íÎó");
+				System.out.print("ä¼ å€¼é”™è¯¯");
 				return 0;
 			}
 			
@@ -47,7 +47,7 @@ public class LoginSqlControl {
 		return 0 ;
 		
 	}
-	//(²éÑ¯ÓÃ»§ĞÅÏ¢)
+	//(æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯)
 	public UserEntity check(UserEntity userEnity) {
 		try {
 				ResultSet rs = null;
@@ -71,7 +71,7 @@ public class LoginSqlControl {
 					return userEnity;
 				}
 				else {	
-					System.out.print("´«Öµ´íÎó");
+					System.out.print("ä¼ å€¼é”™è¯¯");
 					return null;
 				}
 		} catch (Exception e) {
@@ -81,13 +81,13 @@ public class LoginSqlControl {
 			return null ;
 		}
 		
-		//ĞŞ¸ÄÓÃ»§ĞÅÏ¢
+		//ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯
 		public int update(UserEntity userEnity) throws SQLException {
 			String sql = "UPDATE userdata SET username = ?,userpassword = ?,userheadpic = ?,userintroduce = ?,userphone = ?,useremail = ? WHERE userid = ?;";
 			Object[] values = {userEnity.getUserName(),userEnity.getUserPassword(),userEnity.getUserHeadpic(),userEnity.getUserIntroduce(),userEnity.getUserPhone(),userEnity.getUserEmail(),userEnity.getUseId()};
 			return noSelectSql(sql,values);
 		}
-		//¼ì²éÖØ¸´(×¢²á×¨ÓÃ)
+		//æ£€æŸ¥é‡å¤(æ³¨å†Œä¸“ç”¨)
 		public boolean checkRegistReapt(UserEntity userEnity) throws SQLException {
 			
 			if(userEnity.getUserPhone()!=null) {
@@ -107,19 +107,19 @@ public class LoginSqlControl {
 				return true;
 		}
 		
-		//¼ì²éÖØ¸´(Í¨ÓÃ)
-		public boolean checkReapt(Object cloumName,Object value) throws SQLException {//²éÑ¯ÖØ¸´£¬µÚÒ»¸öÖµÎª²éÕÒÏîÄ¿£¬µÚ¶ş¸öÎª²éÕÒµÄÖµ
+		//æ£€æŸ¥é‡å¤(é€šç”¨)
+		public boolean checkReapt(Object cloumName,Object value) throws SQLException {//æŸ¥è¯¢é‡å¤ï¼Œç¬¬ä¸€ä¸ªå€¼ä¸ºæŸ¥æ‰¾é¡¹ç›®ï¼Œç¬¬äºŒä¸ªä¸ºæŸ¥æ‰¾çš„å€¼
 			String sql ="SELECT userid from userdata where "+cloumName+" = ?";
 			
 			Object[] values = {value};
 			ResultSet rs = selectSql(sql,values);
 			if(rs.next()) {
-				return true;//ĞÅÏ¢ÖØ¸´
+				return true;//ä¿¡æ¯é‡å¤
 			}
-			else return false;//ĞÅÏ¢Î´ÖØ¸´
+			else return false;//ä¿¡æ¯æœªé‡å¤
 		}
 		
-		//·ÇselectÓï¾äÅĞ±ğ
+		//éselectè¯­å¥åˆ¤åˆ«
 		private int noSelectSql(String sql,Object[] values) throws SQLException {
 			String[] check = sql.split(" ");
 			if(check[0] != null&&!(check[0].equals("select")||check[0].equals("SELECT"))) {
@@ -127,11 +127,11 @@ public class LoginSqlControl {
 				return i;
 			}
 			else
-				System.out.print("selectÓï¾ä²»Óè´¦Àí");
+				System.out.print("selectè¯­å¥ä¸äºˆå¤„ç†");
 			return 0;
 		}
 		
-		//selectÓï¾ä½ÓÊÕ
+		//selectè¯­å¥æ¥æ”¶
 		private ResultSet selectSql(String sql,Object[] values) throws SQLException {
 			String[] check = sql.split(" ");
 			if(check[0] != null&&(check[0].equals("select")||check[0].equals("SELECT")))	
@@ -139,10 +139,10 @@ public class LoginSqlControl {
 				ResultSet rs = help.search(sql, values);
 				return rs;
 			}else
-				System.out.print("·ÇselectÓï¾ä²»Óè´¦Àí");
+				System.out.print("éselectè¯­å¥ä¸äºˆå¤„ç†");
 			return null;
 		}
-		//adminÓÃ»§ºóÌ¨²éÑ¯
+		//adminç”¨æˆ·åå°æŸ¥è¯¢
 		public List<UserEntity> Select() {
 			List<UserEntity> list = new ArrayList<UserEntity>();
 			String sql = "SELECT * FROM userdata;";
@@ -165,7 +165,7 @@ public class LoginSqlControl {
 			}
 			return list;
 		}
-		//ÓÃ»§×¢Ïú
+		//ç”¨æˆ·æ³¨é”€
 		public int deleteUser(int userid) {
 			int i = 0;
 			String sql = "DELETE FROM userdata WHERE userid = ?";
@@ -177,7 +177,7 @@ public class LoginSqlControl {
 			}
 			return i;
 		}
-		//ÏÔÊ¾ÊÕ²Ø(ÒôÀÖ)
+		//æ˜¾ç¤ºæ”¶è—(éŸ³ä¹)
 		public List<MusicEntity> User_Favorite_Music(int userId) throws SQLException {
 			String sql = "Select m_no from user_favorite_music where userid = ?";
 			Object[] objects = {userId};
@@ -204,7 +204,7 @@ public class LoginSqlControl {
 			return music;
 			
 		}
-		//ÏÔÊ¾ÊÕ²Ø(µçÓ°)
+		//æ˜¾ç¤ºæ”¶è—(ç”µå½±)
 		public List<FilmEntity> User_Favorite_Film(int userId) throws SQLException{
 			String sql = "Select f_id from user_favorite_film where userid = ?";
 			Object[] objects = {userId};
@@ -235,7 +235,7 @@ public class LoginSqlControl {
 			}
 			return film;
 		}
-		//ÏÔÊ¾ÊÕ²Ø(Êé¼®)
+		//æ˜¾ç¤ºæ”¶è—(ä¹¦ç±)
 		public List<BookEntity> User_Favorite_Book(int userId) throws SQLException{
 			String sql = "Select b_isbn from user_favorite_book where userid = ?";
 			Object[] objects = {userId};
@@ -261,7 +261,7 @@ public class LoginSqlControl {
 			}
 			return bookl;
 		}
-		//Êé¼®ÏÔÊ¾
+		//ä¹¦ç±æ˜¾ç¤º
 		public ArrayList<BookEntity> selectAllBook(){
 			
 			ArrayList<BookEntity> list =new ArrayList<BookEntity>();
@@ -294,7 +294,7 @@ public class LoginSqlControl {
 			
 		}
 		
-		//µçÓ°ÏÔÊ¾
+		//ç”µå½±æ˜¾ç¤º
 		public ArrayList<FilmEntity> queryfilm(){
 			ArrayList<FilmEntity> list=new ArrayList<FilmEntity>();
 			ResultSet rs=null;
@@ -305,6 +305,7 @@ public class LoginSqlControl {
 				rs=help.search(sql, values);
 				while(rs.next()) {
 					film =new FilmEntity();
+					film.setF_id(rs.getInt("f_id"));
 					film.setF_name(rs.getString("f_name"));
 					film.setF_focus(rs.getString("f_focus"));
 					film.setF_grade(rs.getDouble("f_grade"));
@@ -317,7 +318,7 @@ public class LoginSqlControl {
 			}
 			return list;
 		}
-		//Ìí¼ÓÊÕ²Ø
+		//æ·»åŠ æ”¶è—
 		public int addBookFav(String favid,int userId) throws SQLException {
 			String sql="INSERT INTO user_favorite_book (userid,b_isbn)VALUES (?,?) ";
 			Object[] values= {userId,favid};
@@ -325,13 +326,13 @@ public class LoginSqlControl {
 			return i;
 		}
 		public int addMusicFav(int favid,int userId) throws SQLException {
-			String sql="INSERT INTO user_favorite_music (userid,b_isbn)VALUES (?,?) ";
+			String sql="INSERT INTO user_favorite_music (userid,m_no)VALUES (?,?) ";
 			Object[] values= {userId,favid};
 			int i = noSelectSql(sql,values);
 			return i;
 		}
 		public int addFilmFav(int favid,int userId) throws SQLException {
-			String sql="INSERT INTO user_favorite_film (userid,b_isbn)VALUES (?,?) ";
+			String sql="INSERT INTO user_favorite_film (userid,f_id)VALUES (?,?) ";
 			Object[] values= {userId,favid};
 			int i = noSelectSql(sql,values);
 			return i;
