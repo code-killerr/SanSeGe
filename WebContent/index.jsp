@@ -402,7 +402,7 @@
 
 						<footer id="footer">
 							<span class="copyright">CK.tu. Design.</span>
-							<span class="copyright">陕ICP备2020018429号-1	</span>
+							<a class="copyright" href="https://beian.miit.gov.cn/" target="_blank">陕ICP备2020018429号-1</a>
 						</footer>
 					</div>
 				</div>
